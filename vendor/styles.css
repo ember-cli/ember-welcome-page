@@ -20,26 +20,26 @@ h2 {
     font-size: 1.75em;
 }
 .welcome-box {
-    width: 800px;
+    width: 960px;
     color: #865931;
     margin: 2em auto 0;
 }
 .welcome-box img {
     float: left;
-    margin-right: 3em;
-    width: 300px;
-    height: 336px;
+    margin-right: 2.5em;
+    width: 446px;
+    height: 500px;
 }
 .welcome {
     width: 450px;
     float: left;
 }
-.welcome ul {
+.welcome ol {
     list-style: disc;
     padding-left: 2em;
     margin-bottom: .75em;
 }
-.welcome > ul > li {
+.welcome > ol > li {
     padding-bottom: .5em;
 }
 .postscript {
