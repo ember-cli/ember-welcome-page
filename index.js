@@ -1,7 +1,7 @@
 /* jshint node: true */
 'use strict';
 
-var fs    = require('fs');
+var fs    = require('fs-extra');
 var path  = require('path');
 var mergeTrees = require('broccoli-merge-trees');
 var Funnel = require('broccoli-funnel');
@@ -21,6 +21,35 @@ module.exports = {
     if (this.shouldIncludeFiles) {
       app.import('vendor/app.css');
     }
+  },
+
+  testemMiddleware: function(app) {
+
+    var root = this.project.root;
+    app.post('/welcome-add-application-hbs', function(req, res) {
+
+      var fromFile = path.join(root, '/tests/files/application.hbs');
+      var toFile = path.join(root, '/tests/dummy/app/templates/application.hbs');
+
+      // @TODO: work out how to handle this.  currently putting in a new file
+      // causes an infinite loop, as adding a new file causes our tests to reload
+      // causing this to run again ;-)  can we turn off watching of one folder using
+      // an add-on?
+
+      //fs.copy(fromFile, toFile, function (err) {
+      //  if (err) return res.send({
+      //    status: err
+      //  });
+      //
+      //  res.send({
+      //    status: 'copied file'
+      //  });
+      //})
+    });
+
+    app.post('/welcome-remove-application-hbs', function(req, res) {
+      res.status(201).end();
+    });
   },
 
   // handle merging in our application.hbs file
