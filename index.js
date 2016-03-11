@@ -3,6 +3,8 @@
 
 var fs    = require('fs');
 var path  = require('path');
+var mergeTrees = require('broccoli-merge-trees');
+var Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-welcome-page',
@@ -12,16 +14,31 @@ module.exports = {
 
     this.app = app;
 
+    this.welcomeDirectory = path.join(this.project.addonPackages['ember-welcome-page'].path, '/welcome');
+
     this.shouldIncludeFiles = this._shouldIncludeFiles();
+
+    if (this.shouldIncludeFiles) {
+      app.import('vendor/app.css');
+    }
   },
 
-  contentFor: function(type, config) {
-    if (type === 'body' && this.shouldIncludeFiles) {
-      return fs.readFileSync(path.join(__dirname, 'vendor/welcome.html'), 'utf8');
+  // handle merging in our application.hbs file
+  // because we are doing things here (without an overwrite), this will automatically
+  // turn off if an application.hbs file is created in the parent app
+  treeForTemplates: function(tree) {
+    if (!this._shouldIncludeFiles) {
+      return tree;
     }
 
-    if (type === 'head-footer' && this.shouldIncludeFiles) {
-      return '<style>' + fs.readFileSync(path.join(__dirname, 'vendor/styles.css'), 'utf8') + '</style>';
+    var welcomeTemplates = new Funnel(this.welcomeDirectory, {
+      srcDir: 'templates'
+    });
+
+    if (tree) {
+      return mergeTrees([tree, welcomeTemplates]);
+    } else {
+      return welcomeTemplates;
     }
   },
 
@@ -30,7 +47,7 @@ module.exports = {
     // see https://github.com/samselikoff/ember-cli-mirage/blob/master/index.js for some initial
     // material on how to tackle this type of checking
 
-    /* requested tests
+    /* requested tests (need to be watching in real-time preferably ...)
       - Has an application.hbs been created?
       - Has an index.hbs been created?
       - Have any routes been created?
