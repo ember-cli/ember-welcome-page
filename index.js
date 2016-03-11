@@ -1,8 +1,7 @@
 /* jshint node: true */
 'use strict';
 
-var fs    = require('fs');
-var path  = require('path');
+var express = require('express');
 
 module.exports = {
   name: 'ember-welcome-page',
@@ -19,18 +18,9 @@ module.exports = {
     var app = config.app;
     var options = config.options;
 
-    console.log(`If you're just getting started with ember, please visit http://localhost:${options.port}${options.baseURL}ember-getting-started to get going`);
+    console.log(`If you're just getting started with ember, please visit http://localhost:${options.port}/ember-getting-started to get going`);
 
-    app.use(options.baseURL + 'ember-getting-started', function(request, response, next) {
-
-      var stream = fs.createReadStream(path.join(__dirname, 'vendor/welcome.html'));
-      stream.on('error', function(e) {
-        response.status(404).send('not found');
-      });
-
-      response.set('Content-Type', 'text/html');
-      stream.pipe(response);
-    });
+    app.use('/ember-getting-started', express.static(__dirname + 'vendor/welcome.html'));
 
     // @TODO: we'll add other middleware down here to hijack / (by leaving out next)
     // once we're sure our tests below are working
