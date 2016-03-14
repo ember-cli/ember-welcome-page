@@ -1,8 +1,6 @@
 /* jshint node: true */
 'use strict';
 
-var express = require('express');
-
 module.exports = {
   name: 'ember-welcome-page',
 
@@ -18,9 +16,22 @@ module.exports = {
     var app = config.app;
     var options = config.options;
 
-    console.log(`If you're just getting started with ember, please visit http://localhost:${options.port}/ember-getting-started to get going`);
+    console.info(`\nJust getting started with Ember? Please visit http://localhost:${options.port}/ember-getting-started to get going\n`);
 
-    app.use('/ember-getting-started', express.static(__dirname + 'vendor/welcome.html'));
+    app.get('/ember-getting-started-image.png', function (req, res, next) {
+      res.sendFile(__dirname + '/vendor/construction.png', options, function (err) {
+        if (err) {
+          res.status(err.status).end();
+        }
+      });
+    });
+    app.get('/ember-getting-started', function (req, res, next) {
+      res.sendFile(__dirname + '/vendor/welcome.html', options, function (err) {
+        if (err) {
+          res.status(err.status).end();
+        }
+      });
+    });
 
     // @TODO: we'll add other middleware down here to hijack / (by leaving out next)
     // once we're sure our tests below are working
