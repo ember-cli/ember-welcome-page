@@ -16,7 +16,7 @@ module.exports = {
     var app = config.app;
     var options = config.options;
 
-    console.info(`\nJust getting started with Ember? Please visit http://localhost:${options.port}/ember-getting-started to get going\n`);
+    this.ui.writeInfoLine(`\nJust getting started with Ember? Please visit http://localhost:${options.port}/ember-getting-started to get going\n`);
 
     app.get('/ember-getting-started-image.png', function (req, res, next) {
       res.sendFile(__dirname + '/vendor/construction.png', options, function (err) {
