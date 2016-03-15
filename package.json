@@ -50,6 +50,7 @@
     "ember-cli-htmlbars": "^1.0.1"
   },
   "ember-addon": {
+    "before": "serve-files-middleware",
     "configPath": "tests/dummy/config"
   }
 }

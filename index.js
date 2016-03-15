@@ -38,11 +38,10 @@ module.exports = {
       });
     });
 
-    // we'll add other middleware down here to hijack / (by leaving out next)
-    // once we're sure our tests below are working
-    //if (this.shouldOverrideIndex) {
-    if (true) {
-      app.get('/', function (req, res, next) {
+    // we'll add another setup here to hijack /
+    // and control everything using our tests
+    if (this.shouldOverrideIndex) {
+      app.get('/', function(req, res, next) {
         res.sendFile(__dirname + '/vendor/welcome.html', options, function (err) {
           if (err) {
             res.status(err.status).end();
