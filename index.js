@@ -14,7 +14,10 @@ module.exports = {
 
     this.app = app;
 
-    this.shouldOverrideIndex = this.shouldOverride(this.app.registry, this.app.project.root);
+    var jsExt = this.app.registry.extensionsForType('js');
+    var templateExt = this.app.registry.extensionsForType('template');
+
+    this.shouldOverrideIndex = this.shouldOverride(jsExt, templateExt, this.app.project.root);
   },
 
   serverMiddleware: function(config) {
@@ -56,9 +59,8 @@ module.exports = {
    - Has an index.hbs been created?
    - Have any routes been created?
    */
-  shouldOverride: function(registry, folderPath) {
-    var templateExtensions = registry.extensionsForType('template');
-    var jsExtensions = registry.extensionsForType('js');
+  shouldOverride: function(jsExtensions, templateExtensions, folderPath) {
+
     var appFiles = walkSync(path.join(folderPath, 'app'));
 
     var jsFiles = appFiles
