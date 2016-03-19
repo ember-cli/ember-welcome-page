@@ -14,10 +14,8 @@ module.exports = {
 
     this.app = app;
 
-    var jsExt = this.app.registry.extensionsForType('js');
-    var templateExt = this.app.registry.extensionsForType('template');
-
-    this.shouldOverrideIndex = this.shouldOverride(jsExt, templateExt, this.app.project.root);
+    this.jsExt = this.app.registry.extensionsForType('js');
+    this.templateExt = this.app.registry.extensionsForType('template');
   },
 
   serverMiddleware: function(config) {
@@ -25,6 +23,7 @@ module.exports = {
     var options = config.options;
 
     this.ui.writeInfoLine("\nJust getting started with Ember? Please visit http://localhost:" + options.port + "/ember-getting-started to get going\n");
+    var _this = this;
 
     app.get('/ember-getting-started-image.png', function (req, res, next) {
       res.sendFile(__dirname + '/vendor/construction.png', options, function (err) {
@@ -41,17 +40,18 @@ module.exports = {
       });
     });
 
-    // we'll add another setup here to hijack /
-    // and control everything using our tests
-    if (this.shouldOverrideIndex) {
-      app.get('/', function(req, res, next) {
+    // we'll assume we're running '/' but then bail if we aren't supposed to be overriding
+    app.get('/', function(req, res, next) {
+      if (_this.shouldOverride(_this.jsExt, _this.templateExt, _this.app.project.root)) {
         res.sendFile(__dirname + '/vendor/welcome.html', options, function (err) {
           if (err) {
             res.status(err.status).end();
           }
         });
-      });
-    }
+      } else {
+        next();
+      }
+    });
   },
 
   /* requested tests (need to be watching in real-time preferably ...)
