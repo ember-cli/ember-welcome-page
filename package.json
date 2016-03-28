@@ -1,6 +1,6 @@
 {
   "name": "ember-welcome-page",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "Welcome page for Ember-CLI",
   "directories": {
     "doc": "doc",
