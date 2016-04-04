@@ -6,6 +6,15 @@ var fs = require('fs');
 var path = require('path');
 var walkSync = require('walk-sync');
 
+function getWelcomePageHTML(baseURL) {
+  var lodash = require('lodash');
+  var fileName = path.join(__dirname, 'vendor', 'welcome.html');
+  var contents = fs.readFileSync(fileName, { encoding: 'utf8' });
+  var compiled = lodash.template(contents);
+
+  return compiled({ baseURL: baseURL });
+}
+
 module.exports = {
   name: 'ember-welcome-page',
 
@@ -25,6 +34,8 @@ module.exports = {
     this.ui.writeInfoLine("\nJust getting started with Ember? Please visit http://localhost:" + options.port + "/ember-getting-started to get going\n");
     var _this = this;
 
+    var welcomePageHTML = getWelcomePageHTML(options.baseURL);
+
     app.get('/ember-getting-started-image.png', function (req, res, next) {
       res.sendFile(__dirname + '/vendor/construction.png', options, function (err) {
         if (err) {
@@ -32,22 +43,15 @@ module.exports = {
         }
       });
     });
+
     app.get('/ember-getting-started', function (req, res, next) {
-      res.sendFile(__dirname + '/vendor/welcome.html', options, function (err) {
-        if (err) {
-          res.status(err.status).end();
-        }
-      });
+      res.send(welcomePageHTML);
     });
 
     // we'll assume we're running '/' but then bail if we aren't supposed to be overriding
-    app.get('/', function(req, res, next) {
+    app.get(options.baseURL, function(req, res, next) {
       if (_this.shouldOverride(_this.jsExt, _this.templateExt, _this.app.project.root)) {
-        res.sendFile(__dirname + '/vendor/welcome.html', options, function (err) {
-          if (err) {
-            res.status(err.status).end();
-          }
-        });
+        res.send(welcomePageHTML);
       } else {
         next();
       }
