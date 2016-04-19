@@ -12,36 +12,49 @@
       font-size: 16px;
       line-height: 1.35em;
       background: #FFFBF5;
+      color: #865931;
+    }
+    html {
+      box-sizing: border-box;
+    }
+    img {
+      max-width: 100%;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    .cf:after {
+      content: "";
+      display: table;
+      clear: both;
     }
     p {
       margin: 0 0 .75em;
-    }
-    a {
-      color: #dd6a58;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #c13c27;
     }
     h2 {
       color: #dd6a58;
       margin-top: 1em;
       font-size: 1.75em;
+      line-height: 1.2
     }
-    .welcome-box {
-      width: 960px;
-      color: #865931;
-      margin: 2em auto 0;
+    a:link, a:visited {
+      color: #dd6a58;
+      text-decoration: none;
     }
-    .welcome-box img {
+    a:hover, a:active {
+      color: #c13c27;
+    }
+    .tomster {
+      width: 40%;
       float: left;
-      margin-right: 2.5em;
-      width: 446px;
-      height: 500px;
     }
     .welcome {
-      width: 450px;
+      width: 60%;
       float: left;
+    }
+    .welcome-box {
+      margin: 2em auto 0;
+      max-width: 960px;
     }
     .welcome ol {
       list-style: disc;
@@ -58,6 +71,7 @@
       font-size: 12px;
       color: #aaa;
       font-style: italic;
+      line-height: 2;
     }
     .postscript code {
       background-color: #F8E7CF;
@@ -67,14 +81,44 @@
       padding: 0.2em 0.5em;
       margin: 0 0.1em;
     }
+    @media (max-width: 700px) {
+      .welcome-box {
+        padding: 1em;
+      }
+      .welcome, .tomster {
+        width: 80%;
+        float: none;
+        margin: auto;
+      }
+      .tomster img {
+        width: 50%;
+        margin: auto;
+        display: block;
+      }
+      h2 {
+        text-align: center;
+      }
+    }
+    @media (max-width: 400px) {
+      .tomster img {
+        width: 60%;
+      }
+      .welcome, .tomster {
+        width: 100%;
+        float: none;
+        margin: auto;
+      }
+    }
   </style>
 
   <script src="<%= baseURL %>ember-cli-live-reload.js"></script>
 </head>
 <body>
 
-<div class="welcome-box">
-  <img src="/ember-getting-started-image.png" alt="Under construction">
+<div class="welcome-box cf">
+  <div class="tomster">
+    <img src="/ember-getting-started-image.png" alt="Under construction">
+  </div>
   <div class="welcome">
     <h2 id="title">Congratulations, you made it!</h2>
 
@@ -86,8 +130,7 @@
     </ol>
     <p>If you run into problems, you can check <a href="http://stackoverflow.com/questions/tagged/ember.js">Stack Overflow</a> or <a href="http://discuss.emberjs.com/">our forums</a>  for ideas and answers—someone&rsquo;s probably been through the same thing and already posted an answer.  If not, you can post your <strong>own</strong> question. People love to help new Ember developers get started, and our community is incredibly supportive <3</p>
   </div>
+  <p class="postscript">To remove this welcome message, remove the <code>ember-welcome-page</code> add-on from your <code>package.json</code> file</p>
 </div>
-<p class="postscript">To remove this welcome message, remove the <code>ember-welcome-page</code> add-on from your <code>package.json</code> file
-</p>
 </body>
 </html>
