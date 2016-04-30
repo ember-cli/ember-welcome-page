@@ -12,7 +12,7 @@
     "test": "ember try:testall",
     "test-node": "node node-tests/nodetest-runner.js"
   },
-  "repository": "",
+  "repository": "https://github.com/ember-cli/ember-welcome-page",
   "engines": {
     "node": ">= 0.10.0"
   },
