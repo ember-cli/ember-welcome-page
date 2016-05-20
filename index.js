@@ -4,15 +4,16 @@
 var existsSync = require('exists-sync');
 var fs = require('fs');
 var path = require('path');
+var VersionChecker = require('ember-cli-version-checker');
 var walkSync = require('walk-sync');
 
-function getWelcomePageHTML(baseURL) {
+function getWelcomePageHTML(baseURL, version) {
   var lodash = require('lodash');
   var fileName = path.join(__dirname, 'vendor', 'welcome.html');
   var contents = fs.readFileSync(fileName, { encoding: 'utf8' });
   var compiled = lodash.template(contents);
 
-  return compiled({ baseURL: baseURL });
+  return compiled({ baseURL: baseURL, version: version });
 }
 
 module.exports = {
@@ -22,6 +23,9 @@ module.exports = {
     this._super.included(app);
 
     this.app = app;
+
+    var checker = new VersionChecker(this);
+    this.guidesVersion = this.massageVersionNumber(checker.for('ember', 'bower').version);
 
     this.jsExt = this.app.registry.extensionsForType('js');
     this.templateExt = this.app.registry.extensionsForType('template');
@@ -34,7 +38,7 @@ module.exports = {
     this.ui.writeInfoLine("\nJust getting started with Ember? Please visit http://localhost:" + options.port + "/ember-getting-started to get going\n");
     var _this = this;
 
-    var welcomePageHTML = getWelcomePageHTML(options.baseURL);
+    var welcomePageHTML = getWelcomePageHTML(options.baseURL, this.guidesVersion);
 
     app.get('/ember-getting-started-image.png', function (req, res, next) {
       res.sendFile(__dirname + '/vendor/construction.png', options, function (err) {
@@ -100,5 +104,9 @@ module.exports = {
     var hasRoutes = routeFiles.length > 0;
 
     return !hasTemplates && !hasRoutes && !hasRouterMapContents;
+  },
+
+  massageVersionNumber: function(version) {
+    return version.replace(/(\d).(\d).\d/, '$1.$2.0');
   }
 };
