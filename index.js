@@ -25,7 +25,7 @@ module.exports = {
     this.app = app;
 
     var checker = new VersionChecker(this);
-    this.guidesVersion = this.massageVersionNumber(checker.for('ember', 'bower').version);
+    this.guidesVersion = this.massageVersionNumber(checker.for('ember', 'bower').version || checker.for('ember-core', 'npm').version);
 
     this.jsExt = this.app.registry.extensionsForType('js');
     this.templateExt = this.app.registry.extensionsForType('template');
