@@ -52,7 +52,7 @@
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-version-checker": "1.1.6",
     "exists-sync": "0.0.3",
-    "lodash": "^4.7.0",
+    "lodash.template": "^4.3.0",
     "walk-sync": "^0.2.6"
   },
   "ember-addon": {
