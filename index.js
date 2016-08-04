@@ -8,10 +8,10 @@ var VersionChecker = require('ember-cli-version-checker');
 var walkSync = require('walk-sync');
 
 function getWelcomePageHTML(baseURL, version) {
-  var lodash = require('lodash');
+  var template = require('lodash.template');
   var fileName = path.join(__dirname, 'vendor', 'welcome.html');
   var contents = fs.readFileSync(fileName, { encoding: 'utf8' });
-  var compiled = lodash.template(contents);
+  var compiled = template(contents);
 
   return compiled({ baseURL: baseURL, version: version });
 }
