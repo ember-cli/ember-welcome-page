@@ -53,7 +53,7 @@
     "ember-cli-version-checker": "1.1.6",
     "exists-sync": "0.0.3",
     "lodash.template": "^4.3.0",
-    "walk-sync": "^0.2.6"
+    "walk-sync": "^0.3.1"
   },
   "ember-addon": {
     "before": "serve-files-middleware",
