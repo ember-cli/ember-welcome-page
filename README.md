@@ -1,7 +1,7 @@
-# Ember-welcome-page
+# Ember Welcome Page
+[![Build Status](https://travis-ci.org/ember-cli/ember-welcome-page.svg?branch=master)](https://travis-ci.org/ember-cli/ember-welcome-page)
 
-Handles displaying a nice welcome page for Ember-CLI instead of the plain
-one that came standard
+Displays a nice welcome page for newly generated applications with links to resources.
 
 ## Installation
 
