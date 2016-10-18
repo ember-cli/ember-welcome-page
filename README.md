@@ -5,19 +5,24 @@ Displays a nice welcome page for newly generated applications with links to reso
 
 ## Installation
 
-* `git clone` this repository
+* `git clone <repository-url>` this repository
+* `cd ember-welcome-page`
 * `npm install`
 * `bower install`
 
 ## Running
 
-* Test by copying the contents of the `app` folder from `node-tests/fixtures/<test>` into `app`
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-Note that changes to files in `app` aren't noticed, as we aren't watching
-file system changes with this add-on.
+* `ember serve`
+* Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ## Running Tests
 
-* `npm run node-test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
+* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
+* `ember test`
+* `ember test --server`
+
+## Building
+
+* `ember build`
+
+For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
