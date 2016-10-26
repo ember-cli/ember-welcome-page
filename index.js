@@ -12,8 +12,15 @@ module.exports = {
 
     if (this._isProduction()) { return; }
 
-    app.import('vendor/construction.png');
     app.import('vendor/welcome-page.css');
+  },
+
+  treeForPublic: function() {
+    if (this._isProduction()) { return false; }
+
+    var tree = this._super.treeForPublic.apply(this, arguments);
+
+    return tree;
   },
 
   treeForAddon: function() {
