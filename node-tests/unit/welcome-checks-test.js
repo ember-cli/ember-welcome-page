@@ -41,11 +41,16 @@ describe('appropriate version number is used', function() {
   it('when we find a 2.x.0 version, we leave it unchanged', function() {
     var result = WelcomeCheck.massageVersionNumber('2.5.0');
     assert.equal('2.5.0', result, 'version number was changed');
+
+    var result = WelcomeCheck.massageVersionNumber('2.10.0');
+    assert.equal('2.10.0', result, 'version number was changed');
   });
 
   it('when we find a 2.x.1 version, we change it to 2.x.0', function() {
     var result = WelcomeCheck.massageVersionNumber('2.5.1');
     assert.equal('2.5.0', result, 'version number was changed');
-  });
 
+    var result = WelcomeCheck.massageVersionNumber('2.10.1');
+    assert.equal('2.10.0', result, 'version number was changed');
+  });
 });

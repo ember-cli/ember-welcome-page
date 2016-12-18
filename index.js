@@ -107,6 +107,6 @@ module.exports = {
   },
 
   massageVersionNumber: function(version) {
-    return version.replace(/(\d).(\d).\d/, '$1.$2.0');
+    return version.replace(/(\d+).(\d+).\d/, '$1.$2.0');
   }
 };
