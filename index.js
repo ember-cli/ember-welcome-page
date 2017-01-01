@@ -28,6 +28,14 @@ module.exports = {
     return tree;
   },
 
+  treeForApp: function() {
+    if (this._isProduction()) { return false; }
+
+    var tree = this._super.treeForApp.apply(this, arguments);
+
+    return tree;
+  },
+
   _isProduction: function() {
     return process.env.EMBER_ENV === 'production';
   }
