@@ -1,9 +1,6 @@
 /* jshint node: true */
 'use strict';
 
-var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
-var Funnel = require('broccoli-funnel');
-
 module.exports = {
   name: 'ember-welcome-page',
 
@@ -31,7 +28,15 @@ module.exports = {
     return tree;
   },
 
+  treeForApp: function() {
+    if (this._isProduction()) { return false; }
+
+    var tree = this._super.treeForApp.apply(this, arguments);
+
+    return tree;
+  },
+
   _isProduction: function() {
-    return EmberAddon.env() === 'production';
+    return process.env.EMBER_ENV === 'production';
   }
 };
