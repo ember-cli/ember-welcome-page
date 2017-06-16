@@ -6,14 +6,15 @@ module.exports = {
 
   included: function(app) {
     this._super.included(app);
+    this._welcomeConfig = app.options['ember-welcome-page'] || {};
 
-    if (this._isProduction()) { return; }
+    if (this._isDisabled()) { return; }
 
     app.import('vendor/welcome-page.css');
   },
 
   treeForPublic: function() {
-    if (this._isProduction()) { return false; }
+    if (this._isDisabled()) { return false; }
 
     var tree = this._super.treeForPublic.apply(this, arguments);
 
@@ -21,7 +22,7 @@ module.exports = {
   },
 
   treeForAddon: function() {
-    if (this._isProduction()) { return false; }
+    if (this._isDisabled()) { return false; }
 
     var tree = this._super.treeForAddon.apply(this, arguments);
 
@@ -29,14 +30,14 @@ module.exports = {
   },
 
   treeForApp: function() {
-    if (this._isProduction()) { return false; }
+    if (this._isDisabled()) { return false; }
 
     var tree = this._super.treeForApp.apply(this, arguments);
 
     return tree;
   },
 
-  _isProduction: function() {
-    return process.env.EMBER_ENV === 'production';
+  _isDisabled: function() {
+    return process.env.EMBER_ENV === 'production' && !this._welcomeConfig.enabled;
   }
 };
