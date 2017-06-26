@@ -6,6 +6,7 @@
   line-height: 1.35em;
   background: #FFFBF5;
   color: #865931;
+  height: 100vh;
 }
 #ember-welcome-page-id-selector img {
   max-width: 100%;
