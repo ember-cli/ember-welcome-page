@@ -1,6 +1,6 @@
 import { getOwner } from '@ember/application';
 import { VERSION } from '@ember/version';
-import { computed } from '@ember/object';
+import { computed, get } from '@ember/object';
 import Component from '@ember/component';
 import layout from '../templates/components/welcome-page';
 import { gte } from 'ember-compatibility-helpers';
@@ -8,10 +8,20 @@ import { gte } from 'ember-compatibility-helpers';
 export default Component.extend({
   layout,
 
-  emberVersion: computed(function() {
-    let [ major, minor ] = VERSION.split(".");
+  isCurrent: computed(function() {
+    let displayCurrent = false;
+    let version = VERSION;
+    let patch = version.split(".")[2];
 
-    return `${major}.${minor}.0`;
+    if (version === 'master') {
+      displayCurrent = true;
+    } else if (patch.match('alpha')) {
+      displayCurrent = true;
+    } else if (patch.match('beta')) {
+      displayCurrent = true;
+    }
+
+    return displayCurrent;
   }),
 
   canAngleBracket: computed(function() {
@@ -31,6 +41,17 @@ export default Component.extend({
       return config.class.rootURL;
     } else {
       return '/';
+    }
+  }),
+
+  emberVersion: computed('isCurrent', function() {
+    let isCurrent = get(this, 'isCurrent');
+
+    if (isCurrent) {
+      return 'current';
+    } else {
+      let [ major, minor ] = VERSION.split(".");
+      return `${major}.${minor}.0`;
     }
   })
 });
