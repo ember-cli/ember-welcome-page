@@ -1,4 +1,27 @@
 <div id="ember-welcome-page-id-selector" data-ember-version="{{emberVersion}}">
+  {{#if showDependencies}}
+    <div class="dependencies">
+      <button class="dependency-button" {{action (mut showDependencies) false}}>Hide Dependencies</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Version</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each dependencies as |dependency|}}
+            <tr>
+              <td><a href={{dependency.href}}>{{dependency.name}}</a></td>
+              <td><code>{{dependency.version}}</code></td>
+              <td>{{dependency.description}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  {{else}}
   <div class="columns">
     <div class="tomster">
       <img src="ember-welcome-page/images/construction.png" alt="Under construction">
@@ -13,7 +36,9 @@
         <li><a href="https://guides.emberjs.com/v{{emberVersion}}/tutorial/ember-cli/">Ember Guides</a> - this is our more thorough, hands-on intro to Ember. Your crash course in Ember philosophy, background and some in-depth discussion of how things work (and why they work the way they do).</li>
       </ol>
       <p>If you run into problems, you can check <a href="http://stackoverflow.com/questions/tagged/ember.js">Stack Overflow</a> or <a href="http://discuss.emberjs.com/">our forums</a>  for ideas and answers—someone&rsquo;s probably been through the same thing and already posted an answer.  If not, you can post your <strong>own</strong> question. People love to help new Ember developers get started, and our <a href="https://emberjs.com/community/">Ember Community</a> is incredibly supportive.</p>
+      <button class="dependency-button" {{action (mut showDependencies) true}}>Show Dependencies</button>
     </div>
   </div>
+  {{/if}}
     <p class="postscript">To remove this welcome message, remove the <code>\{{welcome-page}}</code> component from your <code>application.hbs</code> file.<br>You'll see this page update soon after!</p>
 </div>
