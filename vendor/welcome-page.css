@@ -65,6 +65,21 @@
   padding: 0.2em 0.5em;
   margin: 0 0.1em;
 }
+#ember-welcome-page-id-selector .dependencies-button {
+  text-align: center;
+  font-size: 14px;
+  margin: 0 auto;
+}
+#ember-welcome-page-id-selector .dependencies {
+  clear: both;
+  width: 100%;
+  padding-top: 3em;
+  font-size: 14px;
+  line-height: 2;
+}
+#ember-welcome-page-id-selector .dependencies table {
+  margin: 0 auto;
+}
 @media (max-width: 700px) {
   #ember-welcome-page-id-selector {
     padding: 1em;
