@@ -30,7 +30,7 @@
     "ember-cli-inject-live-reload": "^2.0.1",
     "ember-cli-qunit": "^4.0.0",
     "ember-load-initializers": "^2.0.0",
-    "ember-resolver": "^4.0.0",
+    "ember-resolver": "^5.0.1",
     "ember-source": "~3.6.1",
     "loader.js": "^4.2.3"
   },
