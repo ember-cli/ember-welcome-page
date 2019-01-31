@@ -15,5 +15,22 @@
       <p>If you run into problems, you can check <a href="http://stackoverflow.com/questions/tagged/ember.js">Stack Overflow</a> or <a href="http://discuss.emberjs.com/">our forums</a>  for ideas and answers—someone&rsquo;s probably been through the same thing and already posted an answer.  If not, you can post your <strong>own</strong> question. People love to help new Ember developers get started, and our <a href="https://emberjs.com/community/">Ember Community</a> is incredibly supportive.</p>
     </div>
   </div>
-    <p class="postscript">To remove this welcome message, remove the <code>\{{welcome-page}}</code> component from your <code>application.hbs</code> file.<br>You'll see this page update soon after!</p>
+  <p class="postscript">To remove this welcome message, remove the
+    <code>
+      {{#if canAngleBracket}}
+        &lt;WelcomePage /&gt;
+      {{else}}
+        \{{welcome-page}}
+      {{/if}}
+    </code>
+    component from your
+    <code>
+      {{#if isModuleUnification}}
+        ui/routes/application/template.hbs
+      {{else}}
+        application.hbs
+      {{/if}}
+    </code>
+     file.<br>You'll see this page update soon after!
+  </p>
 </div>

@@ -6,11 +6,22 @@ module.exports = {
 
   included: function(app) {
     this._super.included(app);
+
     this._welcomeConfig = app.options['ember-welcome-page'] || {};
 
     if (this._isDisabled()) { return; }
 
     app.import('vendor/welcome-page.css');
+  },
+
+  config: function() {
+
+    const project = this.app && this.app.project;
+    if (project) {
+      return {
+        isModuleUnification: project.isModuleUnification && project.isModuleUnification()
+      };
+    }
   },
 
   treeForPublic: function() {
