@@ -5,7 +5,7 @@ module.exports = {
   name: 'ember-welcome-page',
 
   included: function(app) {
-    this._super.included(app);
+    this._super.included.apply(this, arguments);
 
     this._welcomeConfig = app.options['ember-welcome-page'] || {};
 
