@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/welcome-page';
+import { gte } from 'ember-compatibility-helpers';
 
 export default Ember.Component.extend({
   layout,
@@ -11,8 +12,7 @@ export default Ember.Component.extend({
   }),
 
   canAngleBracket: Ember.computed(function() {
-    let [ major, minor ] = Ember.VERSION.split(".");
-    return parseFloat(`${major}.${minor}`) >= 3.4;
+    return gte('3.4.0');
   }),
 
   isModuleUnification: Ember.computed(function() {
