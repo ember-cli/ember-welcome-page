@@ -16,7 +16,7 @@ module.exports = {
 
   config: function() {
 
-    const project = this.app && this.app.project;
+    const project = this.project;
     if (project) {
       return {
         isModuleUnification: project.isModuleUnification && project.isModuleUnification()
