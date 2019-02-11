@@ -14,6 +14,7 @@
   "repository": "https://github.com/ember-cli/ember-welcome-page",
   "scripts": {
     "build": "ember build",
+    "changelog": "lerna-changelog",
     "start": "ember server",
     "test": "ember try:each"
   },
@@ -34,6 +35,7 @@
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.7.3",
     "ember-try": "^1.1.0",
+    "lerna-changelog": "^0.8.2",
     "loader.js": "^4.2.3"
   },
   "engines": {
