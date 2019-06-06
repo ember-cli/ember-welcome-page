@@ -11,9 +11,10 @@ moduleForComponent('welcome-page', 'Integration | Component | welcome page', {
   }
 });
 
-test('it renders', function(assert) {
+test('it links to version for release version', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
+  VERSION = '3.1.5';
 
   this.render(hbs`{{welcome-page}}`);
 
