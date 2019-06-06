@@ -19,5 +19,15 @@ export default Ember.Component.extend({
     const config = Ember.getOwner(this).resolveRegistration('config:environment');
 
     return config && config.isModuleUnification;
+  }),
+
+  rootURL: Ember.computed(function() {
+    let config = Ember.getOwner(this).factoryFor('config:environment');
+
+    if (config) {
+      return config.class.rootURL;
+    } else {
+      return '/';
+    }
   })
 });
