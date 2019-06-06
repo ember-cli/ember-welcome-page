@@ -1,6 +1,6 @@
+import { VERSION } from '@ember/version';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-import Ember from 'ember';
 
 moduleForComponent('welcome-page', 'Integration | Component | welcome page', {
   integration: true
@@ -12,7 +12,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{welcome-page}}`);
 
-  let [ emberMajor, emberMinor ] = Ember.VERSION.split('.');
+  let [ emberMajor, emberMinor ] = VERSION.split('.');
   let [ welcomeMajor, welcomeMinor, welcomePatch ] = this.$('[data-ember-version]').data('ember-version').split('.');
 
   assert.equal(emberMajor, welcomeMajor, "Major segment of version should match.");
