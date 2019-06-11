@@ -14,15 +14,15 @@
 #ember-welcome-page-id-selector p {
   margin: 0 0 .75em;
 }
-#ember-welcome-page-id-selector h2 {
-  color: #dd6a58;
+#ember-welcome-page-id-selector h1 {
+  color: #9B2918; 
   margin-top: 1em;
   font-size: 1.75em;
   line-height: 1.2
 }
 #ember-welcome-page-id-selector a:link,
 #ember-welcome-page-id-selector a:visited {
-  color: #dd6a58;
+  color: #9B2918; 
   text-decoration: none;
 }
 #ember-welcome-page-id-selector a:hover,
@@ -53,7 +53,7 @@
   text-align: center;
   padding-top: 3em;
   font-size: 14px;
-  color: #888;
+  color: #212121; 
   font-style: italic;
   line-height: 2;
 }
@@ -80,7 +80,7 @@
     margin: auto;
     display: block;
   }
-  #ember-welcome-page-id-selector h2 {
+  #ember-welcome-page-id-selector h1 {
     text-align: center;
   }
 }
