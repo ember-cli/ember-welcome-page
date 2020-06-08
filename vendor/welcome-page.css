@@ -16,8 +16,8 @@ body {
   max-width: 100%;
 }
 #ember-welcome-page-id-selector p {
-  margin: 0 0 .75em;
   font-size: 1.25em;
+  margin: 0 0 .75em;
 }
 #ember-welcome-page-id-selector h1 {
   font-size: 2.5em;
@@ -54,10 +54,10 @@ body {
   color: rgb(244, 246, 248);
   font-style: italic;
   line-height: 2;
+  margin: 0 auto;
+  max-width: 960px;
   padding-top: 3em;
   text-align: center;
-  max-width: 960px;
-  margin: 0 auto;
 }
 #ember-welcome-page-id-selector .postscript code {
   background-color: rgb(244, 246, 248);
@@ -77,9 +77,9 @@ body {
     flex-direction: column;
   }
   #ember-welcome-page-id-selector .tomster img {
-    width: 50%;
-    margin: auto;
     display: block;
+    margin: auto;
+    width: 50%;
   }
   #ember-welcome-page-id-selector h2 {
     text-align: center;
@@ -91,8 +91,8 @@ body {
   }
   #ember-welcome-page-id-selector .welcome,
   #ember-welcome-page-id-selector .tomster {
-    width: 100%;
     float: none;
     margin: auto;
+    width: 100%;
   }
 }
