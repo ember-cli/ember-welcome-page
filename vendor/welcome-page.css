@@ -2,13 +2,12 @@ body {
   background: rgb(28, 30, 36);
   color: rgb(244, 246, 248);
   font-family: "Inter var","Inter web",-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   margin: 0 auto;
   padding: 0;
 }
 #ember-welcome-page-id-selector {
-  box-shadow: 0 0 0px 10px #FFFBF5;
   height: 100vh;
   padding: 2em;
 }
@@ -17,6 +16,7 @@ body {
 }
 #ember-welcome-page-id-selector p {
   margin: 0 0 .75em;
+  font-size: 1.25em;
 }
 #ember-welcome-page-id-selector h1 {
   font-size: 2.5em;
@@ -26,7 +26,7 @@ body {
 }
 #ember-welcome-page-id-selector a:link,
 #ember-welcome-page-id-selector a:visited {
-  color: rgb(224, 78, 57);
+  color:rgb(255, 92, 68);
   text-decoration: none;
 }
 #ember-welcome-page-id-selector a:hover,
@@ -44,13 +44,10 @@ body {
   margin: 0 auto;
   max-width: 960px;
 }
-#ember-welcome-page-id-selector .welcome ol {
-  list-style: disc;
-  margin-bottom: .75em;
-  padding-left: 2em;
-}
-#ember-welcome-page-id-selector .welcome > ol > li {
-  padding-bottom: .5em;
+
+#ember-welcome-page-id-selector .welcome > ul > li {
+  padding-bottom: 0.5em;
+  font-size: 1.1em;
 }
 #ember-welcome-page-id-selector .postscript {
   color: rgb(244, 246, 248);
