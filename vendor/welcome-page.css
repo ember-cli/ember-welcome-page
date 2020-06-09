@@ -28,7 +28,6 @@ body {
 #ember-welcome-page-id-selector a:link,
 #ember-welcome-page-id-selector a:visited {
   color:rgb(255, 92, 68);
-  text-decoration: none;
 }
 #ember-welcome-page-id-selector a:hover,
 #ember-welcome-page-id-selector a:active {
@@ -45,10 +44,12 @@ body {
   margin: 0 auto;
   max-width: 960px;
 }
-
 #ember-welcome-page-id-selector .welcome > ul > li {
   padding-bottom: 0.5em;
   font-size: 1.1em;
+}
+#ember-welcome-page-id-selector .welcome > ul > li > a {
+  font-weight: bold;
 }
 #ember-welcome-page-id-selector .postscript {
   color: rgb(244, 246, 248);
