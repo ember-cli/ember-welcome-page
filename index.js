@@ -1,8 +1,7 @@
-/* eslint-env node */
 'use strict';
 
 module.exports = {
-  name: 'ember-welcome-page',
+  name: require('./package').name,
 
   included: function(app) {
     this._super.included.apply(this, arguments);

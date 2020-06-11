@@ -1,28 +1,52 @@
-# Ember Welcome Page
+ember-welcome-page
+==============================================================================
+
 [![Build Status](https://travis-ci.org/ember-cli/ember-welcome-page.svg?branch=master)](https://travis-ci.org/ember-cli/ember-welcome-page)
 
 Displays a nice welcome page for newly generated applications with links to resources.
 
-## Installation
+Compatibility
+------------------------------------------------------------------------------
 
-* `git clone <repository-url>` this repository
-* `cd ember-welcome-page`
-* `npm install`
-* `bower install`
+* Ember.js v3.12 or above
+* Ember CLI v2.13 or above
+* Node.js v10 or above
 
-## Running
+
+Installation
+------------------------------------------------------------------------------
+
+```
+ember install ember-welcome-page
+```
+
+Running
+------------------------------------------------------------------------------
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-## Running Tests
+Running Tests
+------------------------------------------------------------------------------
 
 * `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
-## Building
+Building
+------------------------------------------------------------------------------
 
 * `ember build`
 
 For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).
