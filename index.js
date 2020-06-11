@@ -38,6 +38,6 @@ module.exports = {
   },
 
   _isDisabled() {
-    return !this._welcomeConfig.enabled;
+    return this._welcomeConfig.enabled === false;
   }
 };
