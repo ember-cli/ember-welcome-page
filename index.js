@@ -13,17 +13,7 @@ module.exports = {
     app.import('vendor/welcome-page.css');
   },
 
-  config: function() {
-
-    const project = this.project;
-    if (project) {
-      return {
-        isModuleUnification: project.isModuleUnification && project.isModuleUnification()
-      };
-    }
-  },
-
-  treeForPublic: function() {
+  treeForPublic() {
     if (this._isDisabled()) { return false; }
 
     var tree = this._super.treeForPublic.apply(this, arguments);
@@ -31,7 +21,7 @@ module.exports = {
     return tree;
   },
 
-  treeForAddon: function() {
+  treeForAddon() {
     if (this._isDisabled()) { return false; }
 
     var tree = this._super.treeForAddon.apply(this, arguments);
@@ -39,7 +29,7 @@ module.exports = {
     return tree;
   },
 
-  treeForApp: function() {
+  treeForApp() {
     if (this._isDisabled()) { return false; }
 
     var tree = this._super.treeForApp.apply(this, arguments);
@@ -47,7 +37,7 @@ module.exports = {
     return tree;
   },
 
-  _isDisabled: function() {
-    return process.env.EMBER_ENV === 'production' && !this._welcomeConfig.enabled;
+  _isDisabled() {
+    return !this._welcomeConfig.enabled;
   }
 };
