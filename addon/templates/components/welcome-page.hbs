@@ -24,7 +24,11 @@
     </code>
     component from your
     <code>
-      app/templates/application.hbs
+      {{#if isModuleUnification}}
+        src/ui/routes/application/template.hbs
+      {{else}}
+        app/templates/application.hbs
+      {{/if}}
     </code>
     file and save it...you'll see this page update soon after!
   </p>

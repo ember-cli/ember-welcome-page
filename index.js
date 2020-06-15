@@ -3,7 +3,7 @@
 module.exports = {
   name: require('./package').name,
 
-  included: function(app) {
+  included(app) {
     this._super.included.apply(this, arguments);
 
     this._welcomeConfig = app.options['ember-welcome-page'] || {};
@@ -11,6 +11,15 @@ module.exports = {
     if (this._isDisabled()) { return; }
 
     app.import('vendor/welcome-page.css');
+  },
+
+  config() {
+    const project = this.project;
+    if (project) {
+      return {
+        isModuleUnification: project.isModuleUnification && project.isModuleUnification()
+      };
+    }
   },
 
   treeForPublic() {

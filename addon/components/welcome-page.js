@@ -28,6 +28,12 @@ export default Component.extend({
     return gte('3.4.0');
   }),
 
+  isModuleUnification: computed(function() {
+    const config = getOwner(this).resolveRegistration('config:environment');
+
+    return config && config.isModuleUnification;
+  }),
+
   rootURL: computed(function() {
     let config = getOwner(this).factoryFor('config:environment');
 
