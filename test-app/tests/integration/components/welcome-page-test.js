@@ -1,5 +1,3 @@
-/* eslint-disable ember/new-module-imports */
-import Ember from 'ember';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -9,14 +7,10 @@ module('Integration | Component | welcome page', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it links to version for release version', async function (assert) {
-    debugger;
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.on('myAction', function(val) { ... });
-    Ember.VERSION = '3.1.5';
+    await render(hbs`<WelcomePage @emberVersion="3.1.5" />`);
 
-    await render(hbs`<WelcomePage/>`);
-
-    let [emberMajor, emberMinor] = Ember.VERSION.split('.');
+    let emberMajor = 3;
+    let emberMinor = 1;
     let [welcomeMajor, welcomeMinor, welcomePatch] = this.element
       .querySelector('[data-ember-version]')
       .dataset.emberVersion.split('.');
@@ -35,10 +29,7 @@ module('Integration | Component | welcome page', function (hooks) {
   });
 
   test('it links to "/current" for alpha versions', async function (assert) {
-    // Set the version property
-    Ember.VERSION = '2.15.0-alpha.1';
-
-    await render(hbs`<WelcomePage/>`);
+    await render(hbs`<WelcomePage @emberVersion="2.15.0-alpha.1" />`);
 
     let versionText = this.element.querySelector('[data-ember-version]').dataset
       .emberVersion;
@@ -51,10 +42,7 @@ module('Integration | Component | welcome page', function (hooks) {
   });
 
   test('it links to "/current" for beta versions', async function (assert) {
-    // Set the version property
-    Ember.VERSION = '2.15.0-beta.1';
-
-    await render(hbs`<WelcomePage/>`);
+    await render(hbs`<WelcomePage @emberVersion="2.15.0-beta.1" />`);
 
     let versionText = this.element.querySelector('[data-ember-version]').dataset
       .emberVersion;
@@ -67,10 +55,7 @@ module('Integration | Component | welcome page', function (hooks) {
   });
 
   test('it links to "/current" for master', async function (assert) {
-    // Set the version property
-    Ember.VERSION = 'master';
-
-    await render(hbs`<WelcomePage/>`);
+    await render(hbs`<WelcomePage @emberVersion="master" />`);
 
     let versionText = this.element.querySelector('[data-ember-version]').dataset
       .emberVersion;

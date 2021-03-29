@@ -40,7 +40,7 @@ export default setComponentTemplate(
   class extends Component {
     get isCurrent() {
       let displayCurrent = false;
-      let version = VERSION;
+      let version = this.args.emberVersion || VERSION;
       let patch = version.split(".")[2];
 
       if (version === "master") {
@@ -70,7 +70,7 @@ export default setComponentTemplate(
       if (isCurrent) {
         return "current";
       } else {
-        let [major, minor] = VERSION.split(".");
+        let [major, minor] = (this.args.emberVersion || VERSION).split(".");
         return `${major}.${minor}.0`;
       }
     }
