@@ -2,7 +2,7 @@ import { getOwner } from "@ember/application";
 import { VERSION } from "@ember/version";
 import Component from "@glimmer/component";
 import { hbs } from "ember-cli-htmlbars";
-import { setComponentTemplate } from '@ember/component';
+import { setComponentTemplate } from "@ember/component";
 import "./welcome-page.css";
 
 const template = hbs`
@@ -75,4 +75,4 @@ export default setComponentTemplate(
       }
     }
   }
-)
+);

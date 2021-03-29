@@ -20,6 +20,7 @@
 /npm-debug.log*
 /testem.log
 /yarn-error.log
+/test-app/yarn-error.log
 
 # ember-try
 /test-app/.node_modules.ember-try/
