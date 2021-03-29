@@ -7,6 +7,7 @@
 # dependencies
 /bower_components/
 /node_modules/
+/test-app/node_modules/
 
 # misc
 /.env*
@@ -21,6 +22,8 @@
 /yarn-error.log
 
 # ember-try
-/.node_modules.ember-try/
-/bower.json.ember-try
-/package.json.ember-try
+/test-app/.node_modules.ember-try/
+/test-app/yarn.lock.ember-try
+
+/test-app/bower.json.ember-try
+/test-app/package.json.ember-try
