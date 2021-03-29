@@ -8,7 +8,7 @@
       "type": "pwa-node",
       "request": "launch",
       "name": "Build",
-      "program": "${workspaceFolder}/node_modules/.bin/ember",
+      "program": "${workspaceFolder}/test-app/node_modules/ember-cli/bin/ember",
       "args": ["build"],
       "cwd": "${workspaceFolder}/test-app",
       "outputCapture": "std",
