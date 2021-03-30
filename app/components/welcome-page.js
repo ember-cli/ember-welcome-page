@@ -1,1 +1,1 @@
-export { default } from 'ember-welcome-page/components/welcome-page';
+export { default } from "ember-welcome-page/components/welcome-page";

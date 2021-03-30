@@ -1,6 +1,5 @@
-# compiled output
-/dist/
-/tmp/
+# test-app
+/test-app/
 
 # dependencies
 /bower_components/
@@ -10,6 +9,7 @@
 /.editorconfig
 /.ember-cli
 /.env*
+/.eslintcache
 /.eslintignore
 /.eslintrc.js
 /.git/
