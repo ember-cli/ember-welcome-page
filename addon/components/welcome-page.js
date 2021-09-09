@@ -9,19 +9,8 @@ export default Component.extend({
   layout,
 
   isCurrent: computed(function() {
-    let displayCurrent = false;
-    let version = VERSION;
-    let patch = version.split(".")[2];
-
-    if (version === 'master') {
-      displayCurrent = true;
-    } else if (patch.match('alpha')) {
-      displayCurrent = true;
-    } else if (patch.match('beta')) {
-      displayCurrent = true;
-    }
-
-    return displayCurrent;
+    let stableRegex = /^\d+\.\d+\.\d+$/
+    return !stableRegex.test(VERSION);
   }),
 
   canAngleBracket: computed(function() {
