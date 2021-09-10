@@ -1,5 +1,18 @@
 # Changelog
 
+## v5.0.0 (2021-09-10)
+
+#### :boom: Breaking Change
+* [#381](https://github.com/ember-cli/ember-welcome-page/pull/381) Convert to a glimmer component ([@kategengler](https://github.com/kategengler))
+* [#379](https://github.com/ember-cli/ember-welcome-page/pull/379) Drop support for Node < 12 ([@kategengler](https://github.com/kategengler))
+
+#### :house: Internal
+* [#380](https://github.com/ember-cli/ember-welcome-page/pull/380) Remove module-unification conditionals ([@kategengler](https://github.com/kategengler))
+
+#### Committers: 1
+- Katie Gengler ([@kategengler](https://github.com/kategengler))
+
+
 ## v4.1.0 (2021-09-10)
 
 #### :rocket: Enhancement

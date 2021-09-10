@@ -1,6 +1,6 @@
 {
   "name": "ember-welcome-page",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "Welcome page for Ember CLI applications",
   "keywords": [
     "ember-addon"
