@@ -15,16 +15,6 @@ module.exports = {
     app.import('vendor/welcome-page.css');
   },
 
-  config: function () {
-    const project = this.project;
-    if (project) {
-      return {
-        isModuleUnification:
-          project.isModuleUnification && project.isModuleUnification(),
-      };
-    }
-  },
-
   treeForPublic: function () {
     if (this._isDisabled()) {
       return false;
