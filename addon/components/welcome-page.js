@@ -1,25 +1,20 @@
 import { getOwner } from '@ember/application';
 import { VERSION } from '@ember/version';
-import { computed } from '@ember/object';
-// eslint-disable-next-line ember/no-classic-components
-import Component from '@ember/component';
-import layout from '../templates/components/welcome-page';
 import { gte } from 'ember-compatibility-helpers';
 
-// eslint-disable-next-line ember/no-classic-classes,ember/require-tagless-components
-export default Component.extend({
-  layout,
+import Component from '@glimmer/component';
 
-  isCurrent: computed(function () {
+export default class WelcomePageComponent extends Component {
+  get isCurrent() {
     let stableRegex = /^\d+\.\d+\.\d+$/;
     return !stableRegex.test(VERSION);
-  }),
+  }
 
-  canAngleBracket: computed(function () {
+  get canAngleBracket() {
     return gte('3.4.0');
-  }),
+  }
 
-  rootURL: computed(function () {
+  get rootURL() {
     let config = getOwner(this).factoryFor('config:environment');
 
     if (config) {
@@ -27,9 +22,9 @@ export default Component.extend({
     } else {
       return '/';
     }
-  }),
+  }
 
-  emberVersion: computed('isCurrent', function () {
+  get emberVersion() {
     let isCurrent = this.isCurrent;
 
     if (isCurrent) {
@@ -38,5 +33,5 @@ export default Component.extend({
       let [major, minor] = VERSION.split('.');
       return `${major}.${minor}.0`;
     }
-  }),
-});
+  }
+}
