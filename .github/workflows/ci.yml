@@ -23,7 +23,7 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 14.x
       - name: Install Dependencies
         run: yarn install --frozen-lockfile --non-interactive
       - name: Lint
@@ -39,7 +39,7 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 14.x
       - name: Install Dependencies
         run: yarn install --no-lockfile
       - run: yarn test:ember
@@ -60,6 +60,13 @@ jobs:
           - ember-lts-3.16
           - ember-lts-3.20
           - ember-lts-3.24
+          - ember-release
+          - ember-beta
+          - ember-canary
+          - ember-default-with-jquery
+          - ember-classic
+          - embroider-safe
+          - embroider-optimized
 
     steps:
       - uses: actions/checkout@v2
@@ -84,7 +91,7 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 14.x
           registry-url: 'https://registry.npmjs.org'
 
       - name: install dependencies
