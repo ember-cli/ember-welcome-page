@@ -11,7 +11,6 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build --environment=production",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
@@ -32,6 +31,10 @@
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.0.0",
     "ember-cli": "~3.27.0",
+    "ember-cli-3.20": "npm:ember-cli@~3.20.0",
+    "ember-cli-3.24": "npm:ember-cli@~3.24.0",
+    "ember-cli-beta": "npm:ember-cli@beta",
+    "ember-cli-latest": "npm:ember-cli@latest",
     "ember-cli-app-version": "^5.0.0",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-dependency-checker": "^3.2.0",
@@ -48,6 +51,11 @@
     "ember-qunit": "^5.1.4",
     "ember-resolver": "^8.0.2",
     "ember-source": "~3.27.2",
+    "ember-source-3.20": "npm:ember-source@~3.20.0",
+    "ember-source-3.24": "npm:ember-source@~3.24.0",
+    "ember-source-beta": "npm:ember-source@beta",
+    "ember-source-canary": "npm:ember-source@alpha",
+    "ember-source-latest": "npm:ember-source@latest",
     "ember-template-lint": "^3.4.2",
     "ember-welcome-page": "file:..",
     "eslint": "^7.27.0",
@@ -61,6 +69,7 @@
     "prettier": "^2.3.0",
     "qunit": "^2.15.0",
     "qunit-dom": "^1.6.0",
+    "scenario-tester": "^2.0.1",
     "webpack": "^5.53.0"
   },
   "engines": {
