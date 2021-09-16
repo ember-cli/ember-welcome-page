@@ -1,6 +1,6 @@
 "use strict";
 
-const { addonV1Shim } = require("@embroider/util/shim");
+const { addonV1Shim } = require("@embroider/addon-shim");
 
 module.exports = addonV1Shim(__dirname, {
   // this is a backward-compatibility feature that only works when this v2 addon

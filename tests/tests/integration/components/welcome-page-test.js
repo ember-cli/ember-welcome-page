@@ -25,7 +25,7 @@ module('Integration | Component | welcome page', function (hooks) {
       welcomeMinor,
       'Minor segment of version should match.'
     );
-    assert.equal('0', welcomePatch, 'Patch segment of version should be 0.');
+    assert.equal(welcomePatch, '0', 'Patch segment of version should be 0.');
   });
 
   test('it links to "/current" for alpha versions', async function (assert) {
