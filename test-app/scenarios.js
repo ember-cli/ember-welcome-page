@@ -8,6 +8,7 @@ Scenarios.fromDir(__dirname)
     release,
     beta,
     canary,
+    embroider,
   })
   .forEachScenario((scenario) => {
     Qmodule(scenario.name, function (hooks) {
@@ -18,7 +19,11 @@ Scenarios.fromDir(__dirname)
       });
 
       test(`yarn test`, async function (assert) {
-        let result = await app.execute('yarn test');
+        let result = await app.execute('yarn test:ember', {
+          env: {
+            EMBROIDER_TEST_SETUP_OPTIONS: 'optimized',
+          },
+        });
         assert.equal(result.exitCode, 0, result.output);
       });
     });
@@ -74,5 +79,20 @@ async function canary(project) {
   project.linkDevDependency('ember-source', {
     baseDir: __dirname,
     resolveName: 'ember-source-canary',
+  });
+}
+
+async function embroider(project) {
+  project.linkDevDependency('@embroider/core', {
+    baseDir: __dirname,
+    resolveName: '@embroider/core-latest',
+  });
+  project.linkDevDependency('@embroider/compat', {
+    baseDir: __dirname,
+    resolveName: '@embroider/compat-latest',
+  });
+  project.linkDevDependency('@embroider/webpack', {
+    baseDir: __dirname,
+    resolveName: '@embroider/webpack-latest',
   });
 }
