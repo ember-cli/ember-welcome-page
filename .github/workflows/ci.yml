@@ -31,7 +31,7 @@ jobs:
       - name: lint
         run: yarn lint
       - name: test
-        run: yarn ember:test
+        run: yarn test:ember
       - id: set-matrix
         run: echo "::set-output name=matrix::$(yarn scenario-tester list --files ./scenarios.js --matrix 'yarn qunit ./scenarios.js --filter %s:')"
         working-directory: test-app
