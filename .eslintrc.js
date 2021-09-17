@@ -19,23 +19,11 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {
-    "ember/no-get": "off",
-    "ember/no-jquery": "error",
-  },
+  rules: {},
   overrides: [
     // node files
     {
-      files: [
-        ".eslintrc.js",
-        ".prettierrc.js",
-        ".template-lintrc.js",
-        "test-app/ember-cli-build.js",
-        "test-app/config/environment.js",
-        "addon-main.js",
-        "test-app/testem.js",
-        "test-app/config/**/*.js",
-      ],
+      files: [".eslintrc.js", ".template-lintrc.js", "addon-main.js"],
       parserOptions: {
         sourceType: "script",
       },

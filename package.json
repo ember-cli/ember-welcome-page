@@ -9,10 +9,8 @@
   "author": "David Baker <acorncom@gmail.com>",
   "repository": "https://github.com/ember-cli/ember-welcome-page",
   "scripts": {
-    "build": "cd test-app && ember build --environment=production",
-    "changelog": "lerna-changelog",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
-    "lint:hbs": "ember-template-lint test-app",
+    "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "cd test-app && ember serve",
     "test": "npm-run-all lint:* test:*",
