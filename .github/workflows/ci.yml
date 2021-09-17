@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-      - "v*" # prior release branches (e.g. `v0.30.x` branch)
+      - 'v*' # prior release branches (e.g. `v0.30.x` branch)
     tags:
-      - "v*"
+      - 'v*'
   pull_request:
 
 jobs:

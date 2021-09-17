@@ -1,13 +1,17 @@
 {
   "name": "ember-welcome-page",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Welcome page for Ember CLI applications",
   "keywords": [
     "ember-addon"
   ],
+  "repository": "https://github.com/ember-cli/ember-welcome-page",
   "license": "MIT",
   "author": "David Baker <acorncom@gmail.com>",
-  "repository": "https://github.com/ember-cli/ember-welcome-page",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
   "scripts": {
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
     "lint:hbs": "ember-template-lint .",
@@ -74,7 +78,10 @@
     "webpack": "^5.53.0"
   },
   "engines": {
-    "node": "10.* || >= 12"
+    "node": "12.* || 14.* || >= 16"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "ember": {
     "edition": "octane"

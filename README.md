@@ -1,16 +1,14 @@
 ember-welcome-page
 ==============================================================================
 
-[![Build Status](https://travis-ci.org/ember-cli/ember-welcome-page.svg?branch=master)](https://travis-ci.org/ember-cli/ember-welcome-page)
-
 Displays a nice welcome page for newly generated applications with links to resources.
 
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.12 or above
-* Ember CLI v2.13 or above
-* Node.js v10 or above
+* Ember.js v3.20 or above
+* Ember CLI v3.20 or above
+* Node.js v12 or above
 
 
 Installation
