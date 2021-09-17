@@ -1,20 +1,20 @@
-"use strict";
+'use strict';
 
 module.exports = {
   root: true,
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
       legacyDecorators: true,
     },
   },
-  plugins: ["ember"],
+  plugins: ['ember'],
   extends: [
-    "eslint:recommended",
-    "plugin:ember/recommended",
-    "plugin:prettier/recommended",
+    'eslint:recommended',
+    'plugin:ember/recommended',
+    'plugin:prettier/recommended',
   ],
   env: {
     browser: true,
@@ -23,16 +23,21 @@ module.exports = {
   overrides: [
     // node files
     {
-      files: [".eslintrc.js", ".template-lintrc.js", "addon-main.js"],
+      files: [
+        '.eslintrc.js',
+        '.template-lintrc.js',
+        'addon-main.js',
+        '.prettierrc.js',
+      ],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script',
       },
       env: {
         browser: false,
         node: true,
       },
-      plugins: ["node"],
-      extends: ["plugin:node/recommended"],
+      plugins: ['node'],
+      extends: ['plugin:node/recommended'],
     },
   ],
 };
