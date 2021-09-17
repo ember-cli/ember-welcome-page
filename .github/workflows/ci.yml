@@ -34,7 +34,7 @@ jobs:
         run: echo "::set-output name=matrix::$(yarn scenario-tester list --files ./scenarios.js --matrix 'yarn qunit ./scenarios.js --filter %s:')"
 
   build:
-    needs: discover_matrix
+    needs: lint
     name: ${{ matrix.name }}
     runs-on: ubuntu-latest
     strategy:
