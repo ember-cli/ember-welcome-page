@@ -73,6 +73,7 @@
     "qunit": "^2.15.0",
     "qunit-dom": "^1.6.0",
     "scenario-tester": "^2.0.1",
+    "semver": "^7.3.5",
     "webpack": "^5.53.0"
   },
   "engines": {
