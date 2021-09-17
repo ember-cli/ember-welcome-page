@@ -10,7 +10,7 @@ on:
   pull_request:
 
 jobs:
-  lint:
+  test:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -30,17 +30,19 @@ jobs:
       - run: yarn --frozen-lockfile
       - name: lint
         run: yarn lint
+      - name: test
+        run: yarn ember:test
       - id: set-matrix
         run: echo "::set-output name=matrix::$(yarn scenario-tester list --files ./scenarios.js --matrix 'yarn qunit ./scenarios.js --filter %s:')"
         working-directory: test-app
 
-  build:
-    needs: lint
+  compat-scenarios:
+    needs: test
     name: ${{ matrix.name }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix: ${{fromJson(needs.discover_matrix.outputs.matrix)}}
+      matrix: ${{fromJson(needs.test.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v1
       - uses: volta-cli/action@v1
