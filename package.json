@@ -19,10 +19,11 @@
     "start": "cd test-app && ember serve",
     "test": "npm-run-all lint:* test:*",
     "test:ember": "cd test-app && ember test",
-    "test:ember-compatibility": "cd test-app && qunit scenarios.js"
+    "test:ember-compatibility": "cd test-app && qunit scenarios.js",
+    "prepare": "addon-shim link-test-app"
   },
   "dependencies": {
-    "@embroider/addon-shim": "^0.44.1"
+    "@embroider/addon-shim": "^0.45.0-alpha.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",

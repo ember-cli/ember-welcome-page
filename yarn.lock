@@ -1052,14 +1052,16 @@
     ember-cli-version-checker "^5.1.2"
     semver "^7.3.5"
 
-"@embroider/addon-shim@^0.44.1":
-  version "0.44.1"
-  resolved "https://registry.yarnpkg.com/@embroider/addon-shim/-/addon-shim-0.44.1.tgz#a5cf855d63770a18ea1a9c25614e5ea435e68e3e"
-  integrity sha512-yjQ+l0ckz8suDvJi0klYWHK0Fomb6o3QkpMdPcZ+TYsHYyP6u5RrByMkTtwxJtBIGNtJ52oU7Qrhm1lCpnRbxg==
+"@embroider/addon-shim@^0.45.0-alpha.0":
+  version "0.45.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@embroider/addon-shim/-/addon-shim-0.45.0-alpha.0.tgz#708cf536b4899726f73e5be06a8e3e22491e313f"
+  integrity sha512-MOmLpSgckDzqYWRuOuIOmvjZkRWZ6PZ1tJp/1tzVKSGTqYK60K5VPegRF5rJKrYH7cEovW5L87S7JuitrNnfwQ==
   dependencies:
     "@embroider/shared-internals" "^0.44.1"
     ember-auto-import "^2.2.0"
+    fs-extra "^10.0.0"
     semver "^7.3.5"
+    yargs "^17.0.1"
 
 "@embroider/babel-loader-8@0.44.1":
   version "0.44.1"
@@ -7195,6 +7197,15 @@ fs-extra@^0.24.0:
     jsonfile "^2.1.0"
     path-is-absolute "^1.0.0"
     rimraf "^2.2.8"
+
+fs-extra@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.0.0.tgz#9ff61b655dde53fb34a82df84bb214ce802e17c1"
+  integrity sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
 
 fs-extra@^4.0.2, fs-extra@^4.0.3:
   version "4.0.3"
