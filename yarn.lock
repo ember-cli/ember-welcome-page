@@ -1175,7 +1175,7 @@
   dependencies:
     ember-cli-babel "^7.4.0"
 
-"@ember/test-helpers@^2.2.5":
+"@ember/test-helpers@^2.4.2":
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-2.4.2.tgz#e5be97e316dc502d7da933461135fbcb9254726e"
   integrity sha512-++k/dXZ0IeOQLSm0Yu5QuCRe9UoptuckMhaXHY37VLb1varLHRuP8908kigVNt9c5waiocaK4jPjDBkKYRLlfA==
@@ -6369,7 +6369,7 @@ ember-source@~3.27.2:
     semver "^7.3.4"
     silent-error "^1.1.1"
 
-ember-template-lint@^3.4.2:
+ember-template-lint@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-3.7.0.tgz#e0565102b291974afeb65de6933f0d154be508d3"
   integrity sha512-C3oFFdB+g14CvFKZrnAS8Yt0IojTpOhdU5KZoLUs6hOgQjkEF4l/OCBNPtBmL8Nm/dxmc5iTsd5TL98CCcnK+w==
@@ -10667,7 +10667,7 @@ qunit-dom@^1.6.0:
     ember-cli-babel "^7.23.0"
     ember-cli-version-checker "^5.1.1"
 
-qunit@^2.15.0:
+qunit@^2.17.1:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/qunit/-/qunit-2.17.1.tgz#1969efe4c9b776b4b8cd4fc2fb9634e8f762e177"
   integrity sha512-Gx1tpSfYbjRe4TRKCVBLlnCaVThF5Pdnmbbv/zLFfgWKddeQHV/eNi1BG392hw4gEDh2sflMj8kmPJlT7+kVMA==
