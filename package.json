@@ -5,6 +5,10 @@
   "keywords": [
     "ember-addon"
   ],
+  "exports": {
+    "./*": "./addon/*",
+    "./addon-main.js": "./addon-main.js"
+  },
   "repository": "https://github.com/ember-cli/ember-welcome-page",
   "license": "MIT",
   "author": "David Baker <acorncom@gmail.com>",
@@ -19,6 +23,7 @@
     "lint:devdeps": "addon-shim sync-dev-deps --lint",
     "scenario:list": "scenario-tester list --files test-app/scenarios.js",
     "scenario:output": "scenario-tester output --files test-app/scenarios.js --outdir scenario --scenario ",
+    "scenario:run": "cd test-app && qunit scenarios.js --filter ",
     "start": "cd test-app && ember serve",
     "sync-dev-deps": "addon-shim sync-dev-deps",
     "test": "npm-run-all lint:* test:*",
