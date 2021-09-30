@@ -23,6 +23,14 @@
 
 ## The test-app
 
-The directory `./test-app` contains a complete Ember app intended for testing the addon. It has its own `package.json` to declare its dependencies, but you should not need to run a separate `npm` or `yarn` install within it, because everything it needs is included in the top-level `package.json` `devDependencies`.
+The directory `./test-app` contains a complete Ember app intended for testing the addon. It has its own `package.json` to declare its dependencies, but **you should not need to run a separate `npm` or `yarn` install** within it, because everything it needs is included in the top-level `package.json` `devDependencies`.
 
 After you make changes to dependencies in the test-app, you can run `yarn sync-dev-deps` to ensure they are properly synchronized with the top-level package.json.
+
+To upgrade the test app:
+
+1. `cd test-app`
+2. `npx ember-cli-update`
+3. `cd ..`
+4. `yarn sync-dev-deps`
+5. `yarn install`
