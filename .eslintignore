@@ -1,6 +1,7 @@
 # compiled output
 /test-app/dist/
 /test-app/tmp/
+/scenario
 
 # dependencies
 /node_modules/
