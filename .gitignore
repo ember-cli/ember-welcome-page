@@ -4,6 +4,7 @@
 /test-app/dist/
 /test-app/tmp/
 /scenario
+/dist
 
 # dependencies
 /bower_components/
