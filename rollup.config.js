@@ -14,11 +14,13 @@ export default {
     entryFileNames: '[name]',
   },
   plugins: [
-    publicEntrypoints(['addon/components/**/*.js', 'addon/index.js']),
+    publicEntrypoints({
+      srcDir: 'src',
+      include: ['components/**/*.js', 'index.js'],
+    }),
     appReexports({
-      from: 'addon',
-      to: 'app',
-      include: ['addon/components/welcome-page.js'],
+      srcDir: 'src',
+      include: ['components/welcome-page.js'],
     }),
     babel({
       plugins: ['@embroider/addon-dev/template-colocation-plugin'],

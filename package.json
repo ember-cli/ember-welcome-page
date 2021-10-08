@@ -6,7 +6,7 @@
     "ember-addon"
   ],
   "exports": {
-    "./*": "./addon/*",
+    "./*": "./dist/*",
     "./addon-main.js": "./addon-main.js"
   },
   "repository": "https://github.com/ember-cli/ember-welcome-page",
@@ -104,9 +104,6 @@
     "version": 2,
     "type": "addon",
     "main": "addon-main.js",
-    "app-js": {
-      "./components/welcome-page.js": "./app/components/welcome-page.js"
-    },
     "public-assets": {
       "./images/construction.png": "/ember-welcome-page/images/construction.png"
     }
