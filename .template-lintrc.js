@@ -3,6 +3,7 @@
 module.exports = {
   extends: 'recommended',
   rules: {
-    'no-unbalanced-curlies': false,
+    'no-implicit-this': false,
   },
+  ignore: ['scenario/**', 'test-app/node_modules/**', 'test-app/dist/**'],
 };

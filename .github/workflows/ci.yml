@@ -1,104 +1,62 @@
-name: CI
+name: Node CI
 
 on:
   push:
     branches:
       - main
-      - master
+      - 'v*' # prior release branches (e.g. `v0.30.x` branch)
     tags:
-      - v*
-  pull_request: { }
-
-env:
-  CI: true
+      - 'v*'
+  pull_request:
 
 jobs:
-  lint:
-    timeout-minutes: 10
-    name: Lint
+  test:
     runs-on: ubuntu-latest
-
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v2
-      - name: Install node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v1
+      - uses: volta-cli/action@v1
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
+        id: yarn-cache
         with:
-          node-version: 14.x
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile --non-interactive
-      - name: Lint
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn --frozen-lockfile
+      - name: lint
         run: yarn lint
+      - name: test
+        run: yarn test:ember
+      - id: set-matrix
+        run: echo "::set-output name=matrix::$(yarn --silent scenario-tester list --files ./scenarios.js --matrix 'yarn qunit ./scenarios.js --filter %s:')"
+        working-directory: test-app
 
-  floating-dependencies:
-    timeout-minutes: 10
-    name: "Floating Dependencies"
+  compat-scenarios:
+    needs: test
+    name: ${{ matrix.name }}
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-      - name: Install Dependencies
-        run: yarn install --no-lockfile
-      - run: yarn test:ember
-
-  try-scenarios:
-    timeout-minutes: 10
-    name: "Try: ${{ matrix.ember-try-scenario }}"
-
-    runs-on: ubuntu-latest
-
-    needs: floating-dependencies
-
     strategy:
       fail-fast: false
-      matrix:
-        ember-try-scenario:
-          - ember-lts-3.20
-          - ember-lts-3.24
-          - ember-release
-          - ember-beta
-          - ember-canary
-          - ember-default-with-jquery
-          - ember-classic
-          - embroider-safe
-          - embroider-optimized
-
+      matrix: ${{fromJson(needs.test.outputs.matrix)}}
     steps:
-      - uses: actions/checkout@v2
-      - name: Install node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v1
+      - uses: volta-cli/action@v1
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
+        id: yarn-cache
         with:
-          node-version: 12.x
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install --no-lockfile
       - name: test
-        run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
-
-  publish:
-    name: Publish to npm
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
-    runs-on: ubuntu-latest
-    needs: [floating-dependencies, try-scenarios]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: auto-dist-tag
-        run: npx auto-dist-tag@1 --write
-
-      - name: publish to npm
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: ${{ matrix.command }}
+        working-directory: test-app

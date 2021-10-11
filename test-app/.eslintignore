@@ -3,17 +3,17 @@
 /vendor/
 
 # compiled output
-/test-app/dist/
-/test-app/tmp/
+/dist/
+/tmp/
 
 # dependencies
 /bower_components/
 /node_modules/
-/test-app/node_modules
 
 # misc
 /coverage/
 !.*
+.*/
 .eslintcache
 
 # ember-try
