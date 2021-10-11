@@ -29,12 +29,15 @@
     "scenario:list": "scenario-tester list --files test-app/scenarios.js",
     "scenario:output": "scenario-tester output --files test-app/scenarios.js --outdir scenario --scenario ",
     "scenario:run": "cd test-app && qunit scenarios.js --filter ",
-    "start": "cd test-app && ember serve",
+    "start": "npm-run-all --parallel start:*",
+    "start:test-app": "cd test-app && ember serve",
+    "start:build": "rollup --config --watch",
     "sync-dev-deps": "addon-dev sync-dev-deps",
     "test": "npm-run-all lint:* test:*",
     "test:ember": "cd test-app && ember test",
     "test:ember-compatibility": "cd test-app && qunit scenarios.js",
-    "prepare": "addon-dev link-test-app",
+    "prepare": "npm-run-all prepublishOnly link-test-app",
+    "link-test-app": "addon-dev link-test-app",
     "prepublishOnly": "rollup --config"
   },
   "dependencies": {
