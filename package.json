@@ -41,16 +41,16 @@
     "prepublishOnly": "rollup --config"
   },
   "dependencies": {
-    "@embroider/addon-shim": "^0.45.0"
+    "@embroider/addon-shim": "^0.46.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.4.2",
-    "@embroider/addon-dev": "^0.45.0",
+    "@embroider/addon-dev": "^0.46.2",
     "@embroider/compat-latest": "npm:@embroider/compat@latest",
     "@embroider/core-latest": "npm:@embroider/core@latest",
-    "@embroider/test-setup": "^0.45.0",
+    "@embroider/test-setup": "^0.46.2",
     "@embroider/webpack-latest": "npm:@embroider/webpack@latest",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
