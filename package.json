@@ -16,6 +16,11 @@
     "doc": "doc",
     "test": "tests"
   },
+  "files": [
+    "addon-main.js",
+    "dist",
+    "images"
+  ],
   "scripts": {
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
     "lint:hbs": "ember-template-lint .",
@@ -29,7 +34,8 @@
     "test": "npm-run-all lint:* test:*",
     "test:ember": "cd test-app && ember test",
     "test:ember-compatibility": "cd test-app && qunit scenarios.js",
-    "prepare": "addon-dev link-test-app"
+    "prepare": "addon-dev link-test-app",
+    "prepublishOnly": "rollup --config"
   },
   "dependencies": {
     "@embroider/addon-shim": "^0.45.0"
@@ -106,6 +112,9 @@
     "main": "addon-main.js",
     "public-assets": {
       "./images/construction.png": "/ember-welcome-page/images/construction.png"
+    },
+    "app-js": {
+      "./components/welcome-page.js": "./dist/_app_/components/welcome-page.js"
     }
   }
 }
