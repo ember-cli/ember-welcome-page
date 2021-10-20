@@ -1,5 +1,21 @@
 # Changelog
 
+
+## v6.0.0 (2021-10-20)
+
+#### :boom: Breaking Change / :rocket: Enhancement
+* [#346](https://github.com/ember-cli/ember-welcome-page/pull/346) Convert to V2 format ([@ef4](https://github.com/ef4))
+
+#### :house: Internal
+* [#383](https://github.com/ember-cli/ember-welcome-page/pull/383) Add more release automation. ([@rwjblue](https://github.com/rwjblue))
+* [#382](https://github.com/ember-cli/ember-welcome-page/pull/382) Restore CI Publishing ([@kategengler](https://github.com/kategengler))
+
+#### Committers: 3
+- Edward Faulkner ([@ef4](https://github.com/ef4))
+- Katie Gengler ([@kategengler](https://github.com/kategengler))
+- Robert Jackson ([@rwjblue](https://github.com/rwjblue))
+
+
 ## v5.0.0 (2021-09-10)
 
 #### :boom: Breaking Change
