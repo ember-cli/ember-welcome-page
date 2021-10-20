@@ -5,13 +5,13 @@
   "keywords": [
     "ember-addon"
   ],
+  "repository": "https://github.com/ember-cli/ember-welcome-page",
+  "license": "MIT",
+  "author": "David Baker <acorncom@gmail.com>",
   "exports": {
     "./*": "./dist/*",
     "./addon-main.js": "./addon-main.js"
   },
-  "repository": "https://github.com/ember-cli/ember-welcome-page",
-  "license": "MIT",
-  "author": "David Baker <acorncom@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -95,6 +95,8 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
+    "release-it": "^14.2.1",
+    "release-it-lerna-changelog": "^3.1.0",
     "rollup": "^2.57.0",
     "scenario-tester": "^2.0.1",
     "semver": "^7.3.5",
@@ -118,6 +120,24 @@
     },
     "app-js": {
       "./components/welcome-page.js": "./dist/_app_/components/welcome-page.js"
+    }
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    },
+    "npm": {
+      "publish": false
     }
   }
 }
