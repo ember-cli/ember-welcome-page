@@ -60,3 +60,29 @@ jobs:
       - name: test
         run: ${{ matrix.command }}
         working-directory: test-app
+  publish:
+    name: Publish to npm
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    needs: [test, compat-scenarios]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install node
+        uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version: 14.x
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: auto-dist-tag
+        run: npx auto-dist-tag@1 --write
+
+      - name: publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
