@@ -1,6 +1,15 @@
 # Changelog
 
 
+
+## v6.1.0 (2022-01-08)
+
+#### :house: Internal
+* [#384](https://github.com/ember-cli/ember-welcome-page/pull/384) update to latest v2 addon tooling ([@ef4](https://github.com/ef4))
+
+#### Committers: 1
+- Edward Faulkner ([@ef4](https://github.com/ef4))
+
 ## v6.0.0 (2021-10-20)
 
 #### :boom: Breaking Change / :rocket: Enhancement
