@@ -41,13 +41,13 @@
     "prepublishOnly": "rollup --config"
   },
   "dependencies": {
-    "@embroider/addon-shim": "^0.46.2"
+    "@embroider/addon-shim": "^0.50.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.4.2",
-    "@embroider/addon-dev": "^0.46.2",
+    "@embroider/addon-dev": "^0.50.0",
     "@embroider/compat-latest": "npm:@embroider/compat@latest",
     "@embroider/core-latest": "npm:@embroider/core@latest",
     "@embroider/test-setup": "^0.46.2",
