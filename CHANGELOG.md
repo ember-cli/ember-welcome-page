@@ -2,6 +2,16 @@
 
 
 
+
+## v6.2.0 (2022-03-24)
+
+#### :rocket: Enhancement
+* [#386](https://github.com/ember-cli/ember-welcome-page/pull/386) Update to latest v2 addon tooling (v1.5.0) ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### Committers: 1
+- Sergey Astapov ([@SergeAstapov](https://github.com/SergeAstapov))
+
+
 ## v6.1.0 (2022-01-08)
 
 #### :house: Internal
