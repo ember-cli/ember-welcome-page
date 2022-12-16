@@ -19,22 +19,28 @@ module('Integration | Component | welcome page', function (hooks) {
         .querySelector('[data-ember-version]')
         .dataset.emberVersion.split('.');
 
-      assert.equal(
+      assert.strictEqual(
         emberMajor,
         welcomeMajor,
         'Major segment of version should match.'
       );
-      assert.equal(
+
+      assert.strictEqual(
         emberMinor,
         welcomeMinor,
         'Minor segment of version should match.'
       );
-      assert.equal(welcomePatch, '0', 'Patch segment of version should be 0.');
+
+      assert.strictEqual(
+        welcomePatch,
+        '0',
+        'Patch segment of version should be 0.'
+      );
     } else {
       let versionText = this.element.querySelector('[data-ember-version]')
         .dataset.emberVersion;
 
-      assert.equal(
+      assert.strictEqual(
         versionText,
         'current',
         "Version text should be set to 'current' when a non-stable release is used."

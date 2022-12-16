@@ -24,7 +24,8 @@ Scenarios.fromDir(__dirname)
             EMBROIDER_TEST_SETUP_OPTIONS: 'optimized',
           },
         });
-        assert.equal(result.exitCode, 0, result.output);
+
+        assert.strictEqual(result.exitCode, 0, result.output);
       });
     });
   });
