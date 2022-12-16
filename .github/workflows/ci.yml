@@ -38,8 +38,6 @@ jobs:
     name: Tests
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v3
@@ -56,19 +54,23 @@ jobs:
       - name: Test
         run: yarn test:ember
 
-      - id: set-matrix
-        run: echo "::set-output name=matrix::$(yarn --silent scenario-tester list --files ./scenarios.js --matrix 'yarn qunit ./scenarios.js --filter %s:')"
-        working-directory: test-app
-
 
   try-scenarios:
-    name: ${{ matrix.name }}
+    name: ${{ matrix.try-scenario }}
     needs: [lint, test]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     strategy:
       fail-fast: false
-      matrix: ${{fromJson(needs.test.outputs.matrix)}}
+      matrix:
+        try-scenario:
+          - ember-lts-3.28
+          - ember-lts-4.4
+          - ember-release
+          - ember-beta
+          - ember-canary
+          - embroider-safe
+          - embroider-optimized
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v3
@@ -80,10 +82,10 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: yarn install --no-lockfile
+        run: yarn install --frozen-lockfile
 
       - name: Test
-        run: ${{ matrix.command }}
+        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
         working-directory: test-app
 
 

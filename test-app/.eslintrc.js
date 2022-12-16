@@ -33,7 +33,6 @@ module.exports = {
         './config/**/*.js',
         './lib/*/index.js',
         './server/**/*.js',
-        './scenarios.js',
       ],
       parserOptions: {
         sourceType: 'script',
