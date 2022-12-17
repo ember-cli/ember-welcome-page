@@ -37,7 +37,7 @@
     "test:ember": "cd test-app && ember test"
   },
   "dependencies": {
-    "@embroider/addon-shim": "^1.5.0"
+    "@embroider/addon-shim": "^1.8.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
@@ -45,11 +45,11 @@
     "@babel/plugin-proposal-decorators": "^7.20.5",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.8.1",
-    "@embroider/addon-dev": "^1.5.0",
-    "@embroider/test-setup": "^1.5.0",
+    "@embroider/addon-dev": "^3.0.0",
+    "@embroider/test-setup": "^2.0.2",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
-    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-babel": "^6.0.3",
     "broccoli-asset-rev": "^3.0.0",
     "concurrently": "^7.6.0",
     "ember-auto-import": "^2.5.0",
@@ -61,10 +61,8 @@
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
-    "ember-export-application-global": "^2.0.1",
     "ember-fetch": "^8.1.2",
     "ember-load-initializers": "^2.1.2",
-    "ember-maybe-import-regenerator": "^0.1.6",
     "ember-page-title": "^7.0.0",
     "ember-qunit": "6.0.0",
     "ember-resolver": "^8.0.3",
@@ -83,9 +81,9 @@
     "prettier": "^2.8.1",
     "qunit": "^2.19.3",
     "qunit-dom": "^2.0.0",
-    "release-it": "^14.2.1",
-    "release-it-lerna-changelog": "^3.1.0",
-    "rollup": "^2.57.0",
+    "release-it": "^15.5.1",
+    "release-it-lerna-changelog": "^5.0.0",
+    "rollup": "^3.7.5",
     "semver": "^7.3.5",
     "webpack": "^5.75.0"
   },
@@ -107,24 +105,6 @@
     },
     "app-js": {
       "./components/welcome-page.js": "./dist/_app_/components/welcome-page.js"
-    }
-  },
-  "release-it": {
-    "plugins": {
-      "release-it-lerna-changelog": {
-        "infile": "CHANGELOG.md",
-        "launchEditor": true
-      }
-    },
-    "git": {
-      "tagName": "v${version}"
-    },
-    "github": {
-      "release": true,
-      "tokenRef": "GITHUB_AUTH"
-    },
-    "npm": {
-      "publish": false
     }
   }
 }
