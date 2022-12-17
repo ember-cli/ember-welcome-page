@@ -33,7 +33,6 @@ module.exports = {
         './config/**/*.js',
         './lib/*/index.js',
         './server/**/*.js',
-        './scenarios.js',
       ],
       parserOptions: {
         sourceType: 'script',
@@ -51,7 +50,7 @@ module.exports = {
       },
     },
     {
-      // Test files:
+      // test files
       files: ['tests/**/*-test.{js,ts}'],
       extends: ['plugin:qunit/recommended'],
     },

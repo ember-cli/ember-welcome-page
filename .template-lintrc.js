@@ -5,5 +5,5 @@ module.exports = {
   rules: {
     'no-implicit-this': false,
   },
-  ignore: ['scenario/**', 'test-app/node_modules/**', 'test-app/dist/**'],
+  ignore: ['test-app/node_modules/**', 'test-app/dist/**'],
 };
