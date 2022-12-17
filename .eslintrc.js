@@ -28,9 +28,9 @@ module.exports = {
     {
       files: [
         '.eslintrc.js',
+        '.prettierrc.js',
         '.template-lintrc.js',
         'addon-main.js',
-        '.prettierrc.js',
       ],
       parserOptions: {
         sourceType: 'script',
@@ -39,8 +39,7 @@ module.exports = {
         browser: false,
         node: true,
       },
-      plugins: ['node'],
-      extends: ['plugin:node/recommended'],
+      extends: ['plugin:n/recommended'],
     },
   ],
 };
