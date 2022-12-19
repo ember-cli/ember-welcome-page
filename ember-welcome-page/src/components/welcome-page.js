@@ -3,30 +3,42 @@ import { VERSION } from '@ember/version';
 import Component from '@glimmer/component';
 import './welcome-page.css';
 
-export default class WelcomePageComponent extends Component {
-  get isCurrent() {
-    let stableRegex = /^\d+\.\d+\.\d+$/;
-    return !stableRegex.test(VERSION);
-  }
+function isLatestVersion() {
+  const stableRegex = /^\d+\.\d+\.\d+$/;
 
+  return !stableRegex.test(VERSION);
+}
+
+export default class WelcomePageComponent extends Component {
   get rootURL() {
-    let config = getOwner(this).factoryFor('config:environment');
+    const config = getOwner(this).factoryFor('config:environment');
 
     if (config) {
       return config.class.rootURL;
-    } else {
-      return '/';
     }
+
+    return '/';
   }
 
   get emberVersion() {
-    let isCurrent = this.isCurrent;
-
-    if (isCurrent) {
+    if (isLatestVersion()) {
       return 'current';
-    } else {
-      let [major, minor] = VERSION.split('.');
-      return `${major}.${minor}.0`;
     }
+
+    const [majorVersion, minorVersion] = VERSION.split('.');
+    const emberVersion = `${majorVersion}.${minorVersion}.0`;
+
+    return emberVersion;
+  }
+
+  get urlForEmberGuides() {
+    if (isLatestVersion()) {
+      return `https://guides.emberjs.com/current`;
+    }
+
+    const [majorVersion, minorVersion] = VERSION.split('.');
+    const emberVersion = `${majorVersion}.${minorVersion}.0`;
+
+    return `https://guides.emberjs.com/v${emberVersion}`;
   }
 }

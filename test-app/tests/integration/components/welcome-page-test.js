@@ -20,11 +20,11 @@ module('Integration | Component | welcome-page', function (hooks) {
       assert.strictEqual(
         emberVersion,
         `${emberMajor}.${emberMinor}.0`,
-        'We see the correct Ember version. The patch version should be 0.'
+        'We see the correct Ember version.'
       );
     });
   } else {
-    test('it renders (non-stable release)', async function (assert) {
+    test('it renders (the app runs on the latest Ember version)', async function (assert) {
       await render(hbs`<WelcomePage/>`);
 
       const element = find('[data-ember-version]');
