@@ -1,7 +1,18 @@
+[![This project uses GitHub Actions for continuous integration.](https://github.com/ember-cli/ember-welcome-page/workflows/CI/badge.svg)](https://github.com/ember-cli/ember-welcome-page/actions?query=workflow%3ACI)
+
 ember-welcome-page
 ==============================================================================
 
 Displays a nice welcome page for newly generated applications with links to resources.
+
+
+Installation
+------------------------------------------------------------------------------
+
+```sh
+ember install ember-welcome-page
+```
+
 
 Compatibility
 ------------------------------------------------------------------------------
@@ -10,33 +21,6 @@ Compatibility
 * Ember CLI v3.28 or above
 * Node.js v14 or above
 
-
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install ember-welcome-page
-```
-
-Running
-------------------------------------------------------------------------------
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-Running Tests
-------------------------------------------------------------------------------
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-Building
-------------------------------------------------------------------------------
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
 
 Contributing
 ------------------------------------------------------------------------------
