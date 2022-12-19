@@ -1,4 +1,5 @@
 import babel from '@rollup/plugin-babel';
+import copy from 'rollup-plugin-copy';
 import { Addon } from '@embroider/addon-dev/rollup';
 
 const addon = new Addon({
@@ -19,13 +20,12 @@ export default {
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
-    addon.appReexports(['components/welcome-page.js']),
+    addon.appReexports(['components/**/*.js']),
 
     // This babel config should *not* apply presets or compile away ES modules.
     // It exists only to provide development niceties for you, like automatic
     // template colocation.
     babel({
-      plugins: ['@embroider/addon-dev/template-colocation-plugin'],
       babelHelpers: 'bundled',
     }),
 
@@ -43,5 +43,13 @@ export default {
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),
+
+    // Copy Readme and License into published package
+    copy({
+      targets: [
+        { src: '../README.md', dest: '.' },
+        { src: '../LICENSE.md', dest: '.' },
+      ],
+    }),
   ],
 };

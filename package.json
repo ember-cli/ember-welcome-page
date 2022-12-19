@@ -1,110 +1,28 @@
 {
   "name": "ember-welcome-page",
   "version": "6.2.0",
-  "description": "Welcome page for Ember CLI applications",
-  "keywords": [
-    "ember-addon"
-  ],
+  "private": true,
   "repository": "https://github.com/ember-cli/ember-welcome-page",
   "license": "MIT",
   "author": "David Baker <acorncom@gmail.com>",
-  "exports": {
-    "./*": "./dist/*",
-    "./addon-main.js": "./addon-main.js"
-  },
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
-  "files": [
-    "addon-main.js",
-    "dist",
-    "images"
-  ],
   "scripts": {
-    "link-test-app": "addon-dev link-test-app",
-    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
-    "lint:devdeps": "addon-dev sync-dev-deps --lint",
-    "lint:hbs": "ember-template-lint .",
-    "lint:js": "eslint .",
-    "prepare": "concurrently \"npm:prepublishOnly\" \"npm:link-test-app\"",
-    "prepublishOnly": "rollup --config",
-    "start": "concurrently \"npm:start:*\"",
-    "start:build": "rollup --config --watch",
-    "start:test-app": "cd test-app && ember serve",
-    "sync-dev-deps": "addon-dev sync-dev-deps",
-    "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
-    "test:ember": "cd test-app && ember test"
-  },
-  "dependencies": {
-    "@embroider/addon-shim": "^1.8.4"
+    "build": "yarn workspace ember-welcome-page run build",
+    "lint": "yarn workspaces run lint",
+    "lint:fix": "yarn workspaces run lint:fix",
+    "prepare": "yarn build",
+    "start": "concurrently \"npm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "yarn workspace ember-welcome-page run start",
+    "start:test": "yarn workspace test-app run start",
+    "test": "yarn workspaces run test"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
-    "@babel/eslint-parser": "^7.19.1",
-    "@babel/plugin-proposal-decorators": "^7.20.5",
-    "@ember/optional-features": "^2.0.0",
-    "@ember/test-helpers": "^2.8.1",
-    "@embroider/addon-dev": "^3.0.0",
-    "@embroider/test-setup": "^2.0.2",
-    "@glimmer/component": "^1.1.2",
-    "@glimmer/tracking": "^1.1.2",
-    "@rollup/plugin-babel": "^6.0.3",
-    "broccoli-asset-rev": "^3.0.0",
     "concurrently": "^7.6.0",
-    "ember-auto-import": "^2.5.0",
-    "ember-cli": "~4.9.2",
-    "ember-cli-app-version": "^5.0.0",
-    "ember-cli-babel": "^7.26.11",
-    "ember-cli-dependency-checker": "^3.3.1",
-    "ember-cli-htmlbars": "^6.1.1",
-    "ember-cli-inject-live-reload": "^2.1.0",
-    "ember-cli-sri": "^2.1.1",
-    "ember-cli-terser": "^4.0.2",
-    "ember-fetch": "^8.1.2",
-    "ember-load-initializers": "^2.1.2",
-    "ember-page-title": "^7.0.0",
-    "ember-qunit": "6.0.0",
-    "ember-resolver": "^8.0.3",
-    "ember-source": "~4.9.1",
-    "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^5.2.0",
-    "ember-try": "^2.0.0",
-    "eslint": "^8.30.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-ember": "^11.2.1",
-    "eslint-plugin-n": "^15.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-qunit": "^7.3.4",
-    "loader.js": "^4.7.0",
-    "npm-run-all": "^4.1.5",
     "prettier": "^2.8.1",
-    "qunit": "^2.19.3",
-    "qunit-dom": "^2.0.0",
     "release-it": "^15.5.1",
-    "release-it-lerna-changelog": "^5.0.0",
-    "rollup": "^3.7.5",
-    "semver": "^7.3.5",
-    "webpack": "^5.75.0"
+    "release-it-lerna-changelog": "^5.0.0"
   },
-  "engines": {
-    "node": "14.* || 16.* || >= 18"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
-  "ember": {
-    "edition": "octane"
-  },
-  "ember-addon": {
-    "version": 2,
-    "type": "addon",
-    "main": "addon-main.js",
-    "public-assets": {
-      "./images/construction.png": "/ember-welcome-page/images/construction.png"
-    },
-    "app-js": {
-      "./components/welcome-page.js": "./dist/_app_/components/welcome-page.js"
-    }
-  }
+  "workspaces": [
+    "ember-welcome-page",
+    "test-app"
+  ]
 }

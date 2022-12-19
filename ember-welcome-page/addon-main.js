@@ -8,7 +8,9 @@ module.exports = addonV1Shim(__dirname, {
   // because you can just delete <WelcomePage /> from your template and that
   // will cause it to be dropped from the build.
   disabled(options) {
-    let welcomeConfig = options['ember-welcome-page'] || {};
-    return process.env.EMBER_ENV === 'production' && !welcomeConfig.enabled;
+    const isProductionEnvironment = process.env.EMBER_ENV === 'production';
+    const welcomeConfig = options['ember-welcome-page'] || {};
+
+    return isProductionEnvironment && !welcomeConfig.enabled;
   },
 });

@@ -1,16 +1,17 @@
 {
   "name": "test-app",
-  "version": "0.0.0",
+  "version": "6.2.0",
   "private": true,
-  "description": "Small description for test-app goes here",
-  "repository": "",
+  "description": "Test app for ember-welcome-page",
+  "repository": "https://github.com/ember-cli/ember-welcome-page",
   "license": "MIT",
-  "author": "",
+  "author": "David Baker <acorncom@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "scripts": {
+    "build": "ember build --environment=production",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
     "lint:hbs": "ember-template-lint .",
@@ -18,8 +19,7 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
-    "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
-    "test:ember": "ember test"
+    "test": "ember test"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
@@ -50,7 +50,7 @@
     "ember-source-channel-url": "^3.0.0",
     "ember-template-lint": "^5.2.0",
     "ember-try": "^2.0.0",
-    "ember-welcome-page": "file:..",
+    "ember-welcome-page": "^6.2.0",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-ember": "^11.2.1",

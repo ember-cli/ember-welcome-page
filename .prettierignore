@@ -3,20 +3,23 @@
 /vendor/
 
 # compiled output
-/test-app/dist/
-/test-app/tmp/
+/dist/
+/tmp/
 
 # dependencies
 /bower_components/
 /node_modules/
-/test-app/node_modules
 
 # misc
 /coverage/
 !.*
 .eslintcache
+.lint-todo/
 
 # ember-try
 /.node_modules.ember-try/
 /bower.json.ember-try
+/npm-shrinkwrap.json.ember-try
 /package.json.ember-try
+/package-lock.json.ember-try
+/yarn.lock.ember-try

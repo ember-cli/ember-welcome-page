@@ -1,31 +1,25 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/test-app/dist/
-/test-app/tmp/
-/dist
+dist/
 
 # dependencies
-/bower_components/
-/node_modules/
-/test-app/node_modules/
+node_modules/
 
 # misc
 /.env*
 /.pnp*
+/.pnpm-debug.log
 /.sass-cache
-/.eslintcache
+.eslintcache
 /connect.lock
 /coverage/
 /libpeerconnection.log
 /npm-debug.log*
 /testem.log
 /yarn-error.log
-/test-app/yarn-error.log
 
 # ember-try
-/test-app/.node_modules.ember-try/
-/test-app/yarn.lock.ember-try
-
-/test-app/bower.json.ember-try
-/test-app/package.json.ember-try
+/.node_modules.ember-try/
+/package.json.ember-try
+/yarn.lock.ember-try
