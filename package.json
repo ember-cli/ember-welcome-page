@@ -5,6 +5,10 @@
   "repository": "https://github.com/ember-cli/ember-welcome-page",
   "license": "MIT",
   "author": "David Baker <acorncom@gmail.com>",
+  "workspaces": [
+    "ember-welcome-page",
+    "test-app"
+  ],
   "scripts": {
     "build": "yarn workspace ember-welcome-page run build",
     "lint": "yarn workspaces run lint",
@@ -21,9 +25,5 @@
     "concurrently": "^7.6.0",
     "prettier": "^2.8.1",
     "release-it": "^15.5.1"
-  },
-  "workspaces": [
-    "ember-welcome-page",
-    "test-app"
-  ]
+  }
 }

@@ -8,6 +8,11 @@
   "repository": "https://github.com/ember-cli/ember-welcome-page",
   "license": "MIT",
   "author": "David Baker <acorncom@gmail.com>",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./addon-main.js": "./addon-main.js"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -69,10 +74,5 @@
     "public-assets": {
       "./src/images/construction.png": "/ember-welcome-page/images/construction.png"
     }
-  },
-  "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*.js",
-    "./addon-main.js": "./addon-main.js"
   }
 }
