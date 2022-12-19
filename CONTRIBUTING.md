@@ -1,35 +1,40 @@
-# How To Contribute
+# Contributing to ember-welcome-page
+
 
 ## Installation
 
-- `git clone <repository-url>`
-- `cd ember-welcome-page`
-- `yarn install`
+```sh
+git clone git@github.com:ember-cli/ember-welcome-page.git
+cd ember-welcome-page
+yarn install
+```
 
-## Linting
 
-- `yarn lint`
-- `yarn lint:fix`
+## Run test app
 
-## Running & Testing
+```sh
+yarn start
+```
 
-- `yarn start` - Run the test-app for interactive development
-  - view the app at [http://localhost:4200](http://localhost:4200).
-  - run the test suite at [http://localhost:4200/tests](http://localhost:4200/tests)
-- `yarn test` – Run `lint` and `test` scripts
+Visit [http://localhost:4200](http://localhost:4200).
 
-## The test-app
 
-The directory `./test-app` contains a complete Ember app intended for testing the addon. It has its own `package.json` to declare its dependencies, but **you should not need to run a separate `npm` or `yarn` install** within it, because everything it needs is included in the top-level `package.json` `devDependencies`.
+## Lint files
 
-After you make changes to dependencies in the test-app, you can run `yarn sync-dev-deps` to ensure they are properly synchronized with the top-level package.json.
+```sh
+yarn lint
+yarn lint:fix
+```
 
-### Upgrading the test app
 
-To upgrade the test app:
+## Run tests
 
-1. `cd test-app`
-2. `npx ember-cli-update`
-3. `cd ..`
-4. `yarn sync-dev-deps`
-5. `yarn install`
+```sh
+yarn test
+yarn test --server
+```
+
+
+## Folder structure
+
+`ember-welcome-page` follows the [v2 addon format](https://rfcs.emberjs.com/id/0507-embroider-v2-package-format/). This means, you can find the source code in the `ember-welcome-page` directory and the tests in the `test-app/tests` directory.

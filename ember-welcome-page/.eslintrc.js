@@ -4,13 +4,10 @@ module.exports = {
   root: true,
   parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',
-    requireConfigFile: false,
     babelOptions: {
-      plugins: [
-        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
-      ],
+      root: __dirname,
     },
   },
   plugins: ['ember'],
@@ -27,10 +24,10 @@ module.exports = {
     // node files
     {
       files: [
-        '.eslintrc.js',
-        '.prettierrc.js',
-        '.template-lintrc.js',
-        'addon-main.js',
+        './.eslintrc.js',
+        './.prettierrc.js',
+        './.template-lintrc.js',
+        './addon-main.js',
       ],
       parserOptions: {
         sourceType: 'script',
