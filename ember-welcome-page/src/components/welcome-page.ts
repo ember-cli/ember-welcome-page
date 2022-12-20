@@ -23,7 +23,7 @@ export default class WelcomePageComponent extends Component {
 
   get urlForEmberGuides(): string {
     if (isLatestVersion()) {
-      return `https://guides.emberjs.com/current`;
+      return `https://guides.emberjs.com/release`;
     }
 
     const [majorVersion, minorVersion] = (VERSION as string).split('.');

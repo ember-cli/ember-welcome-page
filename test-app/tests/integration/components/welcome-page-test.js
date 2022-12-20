@@ -34,10 +34,10 @@ module('Integration | Component | welcome-page', function (hooks) {
         .dom(linkToTutorial)
         .hasAttribute(
           'href',
-          `https://guides.emberjs.com/v${majorVersion}.${minorVersion}.0/tutorial/ember-cli/`,
+          `https://guides.emberjs.com/v${majorVersion}.${minorVersion}.0/tutorial/`,
           'We see the correct link for the Tutorial.'
         )
-        .hasText('Ember Guides', 'We see the correct label for the Tutorial.');
+        .hasText('Tutorial', 'We see the correct label for the Tutorial.');
     });
   } else {
     test('it renders (the app runs on the latest Ember version)', async function (assert) {
@@ -51,7 +51,7 @@ module('Integration | Component | welcome-page', function (hooks) {
         .dom(linkToQuickStart)
         .hasAttribute(
           'href',
-          'https://guides.emberjs.com/current/getting-started/quick-start/',
+          'https://guides.emberjs.com/release/getting-started/quick-start/',
           'We see the correct link for the Quick Start.'
         )
         .hasText(
@@ -63,10 +63,10 @@ module('Integration | Component | welcome-page', function (hooks) {
         .dom(linkToTutorial)
         .hasAttribute(
           'href',
-          'https://guides.emberjs.com/current/tutorial/ember-cli/',
+          'https://guides.emberjs.com/release/tutorial/',
           'We see the correct link for the Tutorial.'
         )
-        .hasText('Ember Guides', 'We see the correct label for the Tutorial.');
+        .hasText('Tutorial', 'We see the correct label for the Tutorial.');
     });
   }
 });
