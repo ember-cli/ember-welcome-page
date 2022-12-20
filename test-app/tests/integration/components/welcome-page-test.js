@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { find, render } from '@ember/test-helpers';
+import { findAll, render } from '@ember/test-helpers';
 import { VERSION } from '@ember/version';
 import { hbs } from 'ember-cli-htmlbars';
 import semver from 'semver';
@@ -12,29 +12,61 @@ module('Integration | Component | welcome-page', function (hooks) {
     test('it renders', async function (assert) {
       await render(hbs`<WelcomePage/>`);
 
-      const element = find('[data-ember-version]');
-      const { emberVersion } = element.dataset;
+      const links = findAll('a');
+      const linkToQuickStart = links[0];
+      const linkToTutorial = links[1];
 
-      const [emberMajor, emberMinor] = VERSION.split('.');
+      const [majorVersion, minorVersion] = VERSION.split('.');
 
-      assert.strictEqual(
-        emberVersion,
-        `${emberMajor}.${emberMinor}.0`,
-        'We see the correct Ember version.'
-      );
+      assert
+        .dom(linkToQuickStart)
+        .hasAttribute(
+          'href',
+          `https://guides.emberjs.com/v${majorVersion}.${minorVersion}.0/getting-started/quick-start/`,
+          'We see the correct link for the Quick Start.'
+        )
+        .hasText(
+          'Quick Start',
+          'We see the correct label for the Quick Start.'
+        );
+
+      assert
+        .dom(linkToTutorial)
+        .hasAttribute(
+          'href',
+          `https://guides.emberjs.com/v${majorVersion}.${minorVersion}.0/tutorial/ember-cli/`,
+          'We see the correct link for the Tutorial.'
+        )
+        .hasText('Ember Guides', 'We see the correct label for the Tutorial.');
     });
   } else {
     test('it renders (the app runs on the latest Ember version)', async function (assert) {
       await render(hbs`<WelcomePage/>`);
 
-      const element = find('[data-ember-version]');
-      const { emberVersion } = element.dataset;
+      const links = findAll('a');
+      const linkToQuickStart = links[0];
+      const linkToTutorial = links[1];
 
-      assert.strictEqual(
-        emberVersion,
-        'current',
-        'We see the correct Ember version.'
-      );
+      assert
+        .dom(linkToQuickStart)
+        .hasAttribute(
+          'href',
+          'https://guides.emberjs.com/current/getting-started/quick-start/',
+          'We see the correct link for the Quick Start.'
+        )
+        .hasText(
+          'Quick Start',
+          'We see the correct label for the Quick Start.'
+        );
+
+      assert
+        .dom(linkToTutorial)
+        .hasAttribute(
+          'href',
+          'https://guides.emberjs.com/current/tutorial/ember-cli/',
+          'We see the correct link for the Tutorial.'
+        )
+        .hasText('Ember Guides', 'We see the correct label for the Tutorial.');
     });
   }
 });

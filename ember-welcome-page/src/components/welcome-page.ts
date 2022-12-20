@@ -21,17 +21,6 @@ export default class WelcomePageComponent extends Component {
     return '/';
   }
 
-  get emberVersion(): string {
-    if (isLatestVersion()) {
-      return 'current';
-    }
-
-    const [majorVersion, minorVersion] = (VERSION as string).split('.');
-    const emberVersion = `${majorVersion}.${minorVersion}.0`;
-
-    return emberVersion;
-  }
-
   get urlForEmberGuides(): string {
     if (isLatestVersion()) {
       return `https://guides.emberjs.com/current`;
