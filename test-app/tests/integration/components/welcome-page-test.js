@@ -2,6 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { findAll, render } from '@ember/test-helpers';
 import { VERSION } from '@ember/version';
+import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { hbs } from 'ember-cli-htmlbars';
 import semver from 'semver';
 
@@ -20,6 +21,10 @@ module('Integration | Component | welcome-page', function (hooks) {
 
   test('it renders', async function (assert) {
     await render(hbs`<WelcomePage/>`);
+
+    await a11yAudit();
+
+    assert.ok(true, 'We passed the accessibility audit.');
 
     const links = findAll('a');
     const linkToQuickStart = links[0];
