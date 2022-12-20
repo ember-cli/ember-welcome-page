@@ -10,7 +10,10 @@ function isLatestVersion(): boolean {
   return !stableRegex.test(VERSION as string);
 }
 
-export default class WelcomePageComponent extends Component {
+/* eslint-disable-next-line @typescript-eslint/no-empty-interface */
+interface WelcomePageComponentSignature {}
+
+export default class WelcomePageComponent extends Component<WelcomePageComponentSignature> {
   get rootURL(): string {
     const config = getOwner(this).factoryFor('config:environment');
 
