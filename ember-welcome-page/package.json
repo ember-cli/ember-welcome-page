@@ -39,7 +39,7 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "lint:types": "tsc --noEmit",
+    "lint:types": "glint",
     "prepack": "rollup --config",
     "start": "rollup --config --watch",
     "test": "echo \"A v2 addon does not have tests, run tests in test-app\""
@@ -54,6 +54,9 @@
     "@babel/plugin-proposal-decorators": "^7.20.5",
     "@babel/preset-typescript": "^7.18.6",
     "@embroider/addon-dev": "^3.0.0",
+    "@glint/core": "^1.0.0-beta.2",
+    "@glint/environment-ember-loose": "^1.0.0-beta.2",
+    "@glint/template": "^1.0.0-beta.2",
     "@tsconfig/ember": "^1.1.0",
     "@types/ember__application": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
