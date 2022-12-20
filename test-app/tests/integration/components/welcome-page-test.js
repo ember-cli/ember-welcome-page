@@ -1,40 +1,48 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { find, render } from '@ember/test-helpers';
+import { findAll, render } from '@ember/test-helpers';
 import { VERSION } from '@ember/version';
 import { hbs } from 'ember-cli-htmlbars';
 import semver from 'semver';
 
+function getCurrentVersion() {
+  if (semver.valid(VERSION) && !semver.prerelease(VERSION)) {
+    const [majorVersion, minorVersion] = VERSION.split('.');
+
+    return `v${majorVersion}.${minorVersion}.0`;
+  }
+
+  return 'release';
+}
+
 module('Integration | Component | welcome-page', function (hooks) {
   setupRenderingTest(hooks);
 
-  if (semver.valid(VERSION) && !semver.prerelease(VERSION)) {
-    test('it renders', async function (assert) {
-      await render(hbs`<WelcomePage/>`);
+  test('it renders', async function (assert) {
+    await render(hbs`<WelcomePage/>`);
 
-      const element = find('[data-ember-version]');
-      const { emberVersion } = element.dataset;
+    const links = findAll('a');
+    const linkToQuickStart = links[0];
+    const linkToTutorial = links[1];
 
-      const [emberMajor, emberMinor] = VERSION.split('.');
+    const currentVersion = getCurrentVersion();
 
-      assert.strictEqual(
-        emberVersion,
-        `${emberMajor}.${emberMinor}.0`,
-        'We see the correct Ember version. The patch version should be 0.'
-      );
-    });
-  } else {
-    test('it renders (non-stable release)', async function (assert) {
-      await render(hbs`<WelcomePage/>`);
+    assert
+      .dom(linkToQuickStart)
+      .hasAttribute(
+        'href',
+        `https://guides.emberjs.com/${currentVersion}/getting-started/quick-start/`,
+        'We see the correct link for the Quick Start.'
+      )
+      .hasText('Quick Start', 'We see the correct label for the Quick Start.');
 
-      const element = find('[data-ember-version]');
-      const { emberVersion } = element.dataset;
-
-      assert.strictEqual(
-        emberVersion,
-        'current',
-        'We see the correct Ember version.'
-      );
-    });
-  }
+    assert
+      .dom(linkToTutorial)
+      .hasAttribute(
+        'href',
+        `https://guides.emberjs.com/${currentVersion}/tutorial/`,
+        'We see the correct link for the Tutorial.'
+      )
+      .hasText('Tutorial', 'We see the correct label for the Tutorial.');
+  });
 });
