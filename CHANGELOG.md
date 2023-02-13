@@ -1,6 +1,15 @@
 # Changelog
 
 
+## v7.0.1 (2023-02-13)
+
+#### :bug: Bug Fix
+* [#401](https://github.com/ember-cli/ember-welcome-page/pull/401) Ensured that construction.png is published to npm ([@ijlee2](https://github.com/ijlee2))
+
+#### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## v7.0.0 (2023-02-13)
 
 #### :boom: Breaking Change
