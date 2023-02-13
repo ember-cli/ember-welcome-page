@@ -12,7 +12,21 @@
       "launchEditor": true
     },
     "@release-it-plugins/workspaces": {
-      "publish": false
+      "publish": false,
+      "workspaces": [
+        "ember-welcome-page"
+      ],
+      "additionalManifests": {
+        "dependencyUpdates": [
+          "package.json",
+          "test-app/package.json"
+        ],
+        "versionUpdates": [
+          "package.json",
+          "test-app/package.json"
+        ]
+      }
     }
-  }
+  },
+  "npm": false
 }

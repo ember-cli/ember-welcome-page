@@ -112,8 +112,10 @@ jobs:
 
       - name: Run auto-dist-tag
         run: npx auto-dist-tag@1 --write
+        working-directory: ember-welcome-page
 
       - name: Publish
         run: npm publish
+        working-directory: ember-welcome-page
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
