@@ -29,7 +29,8 @@
   },
   "files": [
     "addon-main.js",
-    "dist"
+    "dist",
+    "images"
   ],
   "scripts": {
     "build": "rollup --config",
@@ -91,7 +92,7 @@
       "./components/welcome-page.js": "./dist/_app_/components/welcome-page.js"
     },
     "public-assets": {
-      "./src/images/construction.png": "/ember-welcome-page/images/construction.png"
+      "./images/construction.png": "/ember-welcome-page/images/construction.png"
     }
   }
 }
