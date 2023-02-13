@@ -1,6 +1,30 @@
 # Changelog
 
 
+## v7.0.0 (2023-02-13)
+
+#### :boom: Breaking Change
+* [#388](https://github.com/ember-cli/ember-welcome-page/pull/388) Updated CI and dependencies. Dropped support for Node 12 and Ember 3.24 LTS. ([@ijlee2](https://github.com/ijlee2))
+
+#### :rocket: Enhancement
+* [#395](https://github.com/ember-cli/ember-welcome-page/pull/395) Introduced Glint to ember-welcome-page ([@ijlee2](https://github.com/ijlee2))
+* [#393](https://github.com/ember-cli/ember-welcome-page/pull/393) Introduced TypeScript to ember-welcome-page ([@ijlee2](https://github.com/ijlee2))
+
+#### :house: Internal
+* [#399](https://github.com/ember-cli/ember-welcome-page/pull/399) Updated release-it configuration ([@ijlee2](https://github.com/ijlee2))
+* [#398](https://github.com/ember-cli/ember-welcome-page/pull/398) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#397](https://github.com/ember-cli/ember-welcome-page/pull/397) Allowed release-it to push a tag only (and let CI publish the tag) ([@ijlee2](https://github.com/ijlee2))
+* [#396](https://github.com/ember-cli/ember-welcome-page/pull/396) Updated development dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#394](https://github.com/ember-cli/ember-welcome-page/pull/394) Introduced ember-a11y-testing to test-app ([@ijlee2](https://github.com/ijlee2))
+* [#393](https://github.com/ember-cli/ember-welcome-page/pull/393) Introduced TypeScript to ember-welcome-page ([@ijlee2](https://github.com/ijlee2))
+* [#392](https://github.com/ember-cli/ember-welcome-page/pull/392) Introduced yarn workspaces ([@ijlee2](https://github.com/ijlee2))
+* [#391](https://github.com/ember-cli/ember-welcome-page/pull/391) Updated dependencies to their latest version ([@ijlee2](https://github.com/ijlee2))
+* [#390](https://github.com/ember-cli/ember-welcome-page/pull/390) Updated eslint to v8.30.0 ([@ijlee2](https://github.com/ijlee2))
+* [#389](https://github.com/ember-cli/ember-welcome-page/pull/389) Addressed failing CI. Added Ember 4.8 LTS to test matrix. ([@ijlee2](https://github.com/ijlee2))
+* [#388](https://github.com/ember-cli/ember-welcome-page/pull/388) Updated CI and dependencies. Dropped support for Node 12 and Ember 3.24 LTS. ([@ijlee2](https://github.com/ijlee2))
+
+#### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
 
 
 ## v6.2.0 (2022-03-24)
@@ -19,6 +43,7 @@
 
 #### Committers: 1
 - Edward Faulkner ([@ef4](https://github.com/ef4))
+
 
 ## v6.0.0 (2021-10-20)
 
