@@ -7,5 +7,5 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  // Add routes here
+  this.route('template-tag');
 });

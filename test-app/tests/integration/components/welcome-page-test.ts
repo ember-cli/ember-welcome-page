@@ -1,8 +1,8 @@
-import { module, test } from 'qunit';
 import { findAll, render } from '@ember/test-helpers';
 import { VERSION } from '@ember/version';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { hbs } from 'ember-cli-htmlbars';
+import { module, test } from 'qunit';
 import semver from 'semver';
 import { setupRenderingTest } from 'test-app/tests/helpers';
 
@@ -20,13 +20,24 @@ module('Integration | Component | welcome-page', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    await render(hbs`<WelcomePage/>`);
+    await render(hbs`
+      <WelcomePage />
+    `);
 
-    await a11yAudit();
+    assert
+      .dom('.tomster img')
+      .hasAttribute(
+        'alt',
+        'Under construction',
+        'The image has an alternate text.'
+      )
+      .hasAttribute(
+        'src',
+        '/ember-welcome-page/images/construction.png',
+        'The image source is correct.'
+      );
 
-    assert.ok(true, 'We passed the accessibility audit.');
-
-    const links = findAll('a');
+    const links = findAll('ul a');
     const linkToQuickStart = links[0];
     const linkToTutorial = links[1];
 
@@ -49,5 +60,15 @@ module('Integration | Component | welcome-page', function (hooks) {
         'We see the correct link for the Tutorial.'
       )
       .hasText('Tutorial', 'We see the correct label for the Tutorial.');
+  });
+
+  test('it passes accessibility audit', async function (assert) {
+    await render(hbs`
+      <WelcomePage />
+    `);
+
+    await a11yAudit();
+
+    assert.ok(true, 'We passed the accessibility audit.');
   });
 });
