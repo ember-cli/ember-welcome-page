@@ -1,10 +1,10 @@
 import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
 import { findAll, render } from '@ember/test-helpers';
 import { VERSION } from '@ember/version';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { hbs } from 'ember-cli-htmlbars';
 import semver from 'semver';
+import { setupRenderingTest } from 'test-app/tests/helpers';
 
 function getCurrentVersion() {
   if (semver.valid(VERSION) && !semver.prerelease(VERSION)) {

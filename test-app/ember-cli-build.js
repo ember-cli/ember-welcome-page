@@ -9,6 +9,9 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: ['ember-welcome-page'],
     },
+    'ember-cli-babel': {
+      enableTypeScriptTransform: true,
+    },
   });
 
   /*

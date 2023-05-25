@@ -5,3 +5,9 @@ declare module 'test-app/templates/*' {
   const tmpl: TemplateFactory;
   export default tmpl;
 }
+
+declare module '@ember/version' {
+  const VERSION: string;
+
+  export { VERSION };
+}
