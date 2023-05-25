@@ -11,3 +11,7 @@
 
 # ember-try
 /.node_modules.ember-try/
+
+# specific to this package
+/**/*.gjs
+/**/*.gts
