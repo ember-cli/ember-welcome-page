@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v7.0.2 (2023-05-25)
+
+#### :bug: Bug Fix
+* [#403](https://github.com/ember-cli/ember-welcome-page/pull/403) Added missing code for supporting Glint and <template>-tag ([@ijlee2](https://github.com/ijlee2))
+
+#### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
 ## v7.0.1 (2023-02-13)
 
 #### :bug: Bug Fix

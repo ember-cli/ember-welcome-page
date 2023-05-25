@@ -1,6 +1,6 @@
 {
   "name": "test-app",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "private": true,
   "description": "Test app for ember-welcome-page",
   "repository": "https://github.com/ember-cli/ember-welcome-page",
@@ -61,7 +61,7 @@
     "ember-template-imports": "^3.4.2",
     "ember-template-lint": "^5.9.0",
     "ember-try": "^2.0.0",
-    "ember-welcome-page": "7.0.1",
+    "ember-welcome-page": "7.0.2",
     "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-ember": "^11.7.2",
