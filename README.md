@@ -16,7 +16,24 @@ ember install ember-welcome-page
 ```
 
 <details>
-<summary>Use Glint or <code>&lt;template&gt;</code> tag? ✨</summary>
+<summary>Use Glint with <code>&lt;template&gt;</code> tag? ✨</summary>
+
+- If you are using [`<template>` tag](https://github.com/ember-template-imports/ember-template-imports), you are good to go! Use the named import to consume things.
+
+    ```ts
+    /* app/components/hello-world.{gjs,gts} */
+
+    import { WelcomePage } from 'ember-welcome-page';
+
+    <template>
+      <WelcomePage />
+    </template>
+    ```
+
+</details>
+
+<details>
+<summary>Use Glint with <code>.hbs</code>? </summary>
 
 - Update your template registry to extend this addon's. Check the [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons#using-glint-enabled-addons) for more information.
 
@@ -32,18 +49,6 @@ ember install ember-welcome-page
         // local entries
       }
     }
-    ```
-
-- If you are using [`<template>` tag](https://github.com/ember-template-imports/ember-template-imports), you are good to go! Use the named import to consume things.
-
-    ```ts
-    /* app/components/hello-world.{gjs,gts} */
-
-    import { WelcomePage } from 'ember-welcome-page';
-
-    <template>
-      <WelcomePage />
-    </template>
     ```
 
 </details>
