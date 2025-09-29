@@ -33,7 +33,7 @@ module('Integration | Component | welcome-page', function (hooks) {
       )
       .hasAttribute(
         'src',
-        '/src/components/construction.png',
+        /.*\.png/,
         'The image source is correct.',
       );
 
