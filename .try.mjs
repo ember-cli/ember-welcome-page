@@ -23,6 +23,11 @@ const compatDeps = {
   '@ember/optional-features': '^2.2.0',
 };
 
+const superOldDeps = {
+  '@glimmer/component': '^1.0.0',
+  'ember-cli': '^4.12.0',
+};
+
 export default {
   scenarios: [
     {
@@ -31,6 +36,7 @@ export default {
         devDependencies: {
           'ember-source': '~3.28.0',
           ...compatDeps,
+          ...superOldDeps,
         },
       },
       env: {
@@ -44,6 +50,7 @@ export default {
         devDependencies: {
           'ember-source': '~4.4.0',
           ...compatDeps,
+          ...superOldDeps,
         },
       },
       env: {
@@ -57,6 +64,7 @@ export default {
         devDependencies: {
           'ember-source': '~4.8.0',
           ...compatDeps,
+          ...superOldDeps,
         },
       },
       env: {
