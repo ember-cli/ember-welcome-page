@@ -81,6 +81,9 @@ importers:
       '@types/qunit':
         specifier: ^2.19.12
         version: 2.19.13
+      '@types/semver':
+        specifier: ^7.7.1
+        version: 7.7.1
       babel-plugin-ember-template-compilation:
         specifier: ^2.2.5
         version: 2.4.1
@@ -135,6 +138,9 @@ importers:
       rollup:
         specifier: ^4.22.5
         version: 4.52.3
+      semver:
+        specifier: ^7.7.2
+        version: 7.7.2
       testem:
         specifier: ^3.15.1
         version: 3.16.0(handlebars@4.7.8)(underscore@1.13.7)
@@ -1411,6 +1417,9 @@ packages:
 
   '@types/rimraf@2.0.5':
     resolution: {integrity: sha512-YyP+VfeaqAyFmXoTh3HChxOQMyjByRMsHU7kc5KOJkSlXudhMhQIALbYV7rHh/l8d2lX3VUQzprrcAgWdRuU8g==}
+
+  '@types/semver@7.7.1':
+    resolution: {integrity: sha512-FmgJfu+MOcQ370SD0ev7EI8TlCAfKYU+B4m5T3yXc1CiRN94g/SZPtsCkk506aUDtlMnFZvasDwHHUcZUEaYuA==}
 
   '@types/send@0.17.5':
     resolution: {integrity: sha512-z6F2D3cOStZvuk2SaP6YrwkNO65iTZcwA2ZkSABegdkAh/lf+Aa/YQndZVfmEXT5vgAp6zv06VQ3ejSVjAny4w==}
@@ -7101,6 +7110,8 @@ snapshots:
     dependencies:
       '@types/glob': 9.0.0
       '@types/node': 24.6.0
+
+  '@types/semver@7.7.1': {}
 
   '@types/send@0.17.5':
     dependencies:
