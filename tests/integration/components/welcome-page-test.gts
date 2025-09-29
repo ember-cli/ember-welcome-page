@@ -31,11 +31,7 @@ module('Integration | Component | welcome-page', function (hooks) {
         'Under construction',
         'The image has an alternate text.',
       )
-      .hasAttribute(
-        'src',
-        /.*\.png/,
-        'The image source is correct.',
-      );
+      .hasAttribute('src', /.*\.png/, 'The image source is correct.');
 
     const links = findAll('ul a');
     const linkToQuickStart = links[0];
