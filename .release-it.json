@@ -13,18 +13,10 @@
     },
     "@release-it-plugins/workspaces": {
       "publish": false,
-      "workspaces": [
-        "ember-welcome-page"
-      ],
+      "workspaces": ["ember-welcome-page"],
       "additionalManifests": {
-        "dependencyUpdates": [
-          "package.json",
-          "test-app/package.json"
-        ],
-        "versionUpdates": [
-          "package.json",
-          "test-app/package.json"
-        ]
+        "dependencyUpdates": ["package.json", "test-app/package.json"],
+        "versionUpdates": ["package.json", "test-app/package.json"]
       }
     }
   },
