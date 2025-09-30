@@ -1,40 +1,28 @@
-# Contributing to ember-welcome-page
-
+# How To Contribute
 
 ## Installation
 
-```sh
-git clone git@github.com:ember-cli/ember-welcome-page.git
-cd ember-welcome-page
-yarn install
-```
+- `git clone <repository-url>`
+- `cd ember-welcome-page`
+- `pnpm install`
 
+## Linting
 
-## Run test app
+- `pnpm lint`
+- `pnpm lint:fix`
 
-```sh
-yarn start
-```
+## Building the addon
 
-Visit [http://localhost:4200](http://localhost:4200).
+- `pnpm build`
 
+## Running tests
 
-## Lint files
+- `pnpm test` – Runs the test suite on the current Ember version
+- `pnpm test:watch` – Runs the test suite in "watch mode"
 
-```sh
-yarn lint
-yarn lint:fix
-```
+## Running the test application
 
+- `pnpm start`
+- Visit the test application at [http://localhost:4200](http://localhost:4200).
 
-## Run tests
-
-```sh
-yarn test
-yarn test --server
-```
-
-
-## Folder structure
-
-`ember-welcome-page` follows the [v2 addon format](https://rfcs.emberjs.com/id/0507-embroider-v2-package-format/). This means, you can find the source code in the `ember-welcome-page` directory and the tests in the `test-app/tests` directory.
+For more information on using ember-cli, visit [https://cli.emberjs.com/release/](https://cli.emberjs.com/release/).

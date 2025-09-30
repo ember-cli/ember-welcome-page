@@ -4,6 +4,10 @@
 
 Displays a nice welcome page for newly generated applications with links to resources.
 
+## Compatibility
+
+- Ember.js v3.28 or above
+- Embroider or ember-auto-import v2
 
 ## Installation
 
@@ -44,18 +48,9 @@ ember install ember-welcome-page
 
 </details>
 
-
-## Compatibility
-
-- Ember.js v3.28 or above
-- Ember CLI v3.28 or above
-- Node.js v14 or above
-
-
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
 
 ## License
 
