@@ -10,8 +10,11 @@ function isLatestVersion(): boolean {
   return !stableRegex.test(VERSION);
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
-interface WelcomePageComponentSignature {}
+interface WelcomePageComponentSignature {
+  Args: {
+    extension?: 'hbs' | 'gjs' | 'gts';
+  };
+}
 
 export default class WelcomePageComponent extends Component<WelcomePageComponentSignature> {
   <template>
@@ -50,12 +53,18 @@ export default class WelcomePageComponent extends Component<WelcomePageComponent
         </div>
       </div>
       <p class="postscript">To remove this welcome message, remove the
-        <code>
-          &lt;WelcomePage /&gt;
-        </code>
+        {{#if @extension}}
+          <code>
+            &lt;WelcomePage @extension="{{@extension}}" /&gt;
+          </code>
+        {{else}}
+          <code>
+            &lt;WelcomePage /&gt;
+          </code>
+        {{/if}}
         component from your
         <code>
-          app/templates/application.hbs
+          app/templates/application.{{this.extension}}
         </code>
         file and save it...you'll see this page update soon after!
       </p>
@@ -81,5 +90,9 @@ export default class WelcomePageComponent extends Component<WelcomePageComponent
     const emberVersion = `${majorVersion}.${minorVersion}.0`;
 
     return `https://guides.emberjs.com/v${emberVersion}`;
+  }
+
+  get extension(): 'hbs' | 'gjs' | 'gts' {
+    return this.args.extension ?? 'hbs';
   }
 }

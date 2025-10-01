@@ -56,6 +56,46 @@ module('Integration | Component | welcome-page', function (hooks) {
         'We see the correct link for the Tutorial.',
       )
       .hasText('Tutorial', 'We see the correct label for the Tutorial.');
+
+    const codeSnippets = findAll('code');
+    const usage = codeSnippets[0];
+    const path = codeSnippets[1];
+
+    assert
+      .dom(usage)
+      .hasText(
+        '<WelcomePage />',
+        'The usage example has not extension argument',
+      );
+
+    assert
+      .dom(path)
+      .hasText(
+        'app/templates/application.hbs',
+        'The application template path has the default extension',
+      );
+  });
+
+  test('it renders with custom extension argument', async function (assert) {
+    await render(<template><WelcomePage @extension="gts" /></template>);
+
+    const codeSnippets = findAll('code');
+    const usage = codeSnippets[0];
+    const path = codeSnippets[1];
+
+    assert
+      .dom(usage)
+      .hasText(
+        '<WelcomePage @extension="gts" />',
+        'The usage example has the correct extension argument',
+      );
+
+    assert
+      .dom(path)
+      .hasText(
+        'app/templates/application.gts',
+        'The application template path has the correct extension',
+      );
   });
 
   test('it passes accessibility audit', async function (assert) {
