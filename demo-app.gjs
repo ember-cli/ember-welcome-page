@@ -13,6 +13,8 @@ export default class TestApp extends EmberApp {
   modulePrefix = 'demo-app';
   Resolver = Resolver.withModules({
     'demo-app/router': { default: Router },
-    'demo-app/templates/application': <template><WelcomePage /></template>,
+    'demo-app/templates/application': <template>
+      <WelcomePage @extension="gjs" />
+    </template>,
   });
 }
