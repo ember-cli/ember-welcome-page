@@ -15,43 +15,20 @@ Displays a nice welcome page for newly generated applications with links to reso
 ember install ember-welcome-page
 ```
 
-<details>
-<summary>Use Glint with <code>&lt;template&gt;</code> tag? ✨</summary>
+## Usage
 
-- If you are using [`<template>` tag](https://github.com/ember-template-imports/ember-template-imports), you are good to go! Use the named import to consume things.
+The primary usage of this addon is as a default experience for people when first generating a new Ember application. It is unlikely that you would want to use this component, but if you did here is how you do it: 
 
-    ```ts
-    /* app/components/hello-world.{gjs,gts} */
 
-    import { WelcomePage } from 'ember-welcome-page';
+```gjs
+/* app/components/hello-world.gjs */
 
-    <template>
-      <WelcomePage />
-    </template>
-    ```
+import { WelcomePage } from 'ember-welcome-page';
 
-</details>
-
-<details>
-<summary>Use Glint with <code>.hbs</code>? </summary>
-
-- Update your template registry to extend this addon's. Check the [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons#using-glint-enabled-addons) for more information.
-
-    ```ts
-    /* types/index.d.ts */
-
-    import '@glint/environment-ember-loose';
-
-    import type EmberWelcomePageRegistry from 'ember-welcome-page/template-registry';
-
-    declare module '@glint/environment-ember-loose/registry' {
-      export default interface Registry extends EmberWelcomePageRegistry, /* other addon registries */ {
-        // local entries
-      }
-    }
-    ```
-
-</details>
+<template>
+  <WelcomePage />
+</template>
+```
 
 ## Contributing
 
