@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-10-03)
+
+* ember-welcome-page 8.0.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-welcome-page`
+  * [#412](https://github.com/ember-cli/ember-welcome-page/pull/412) Fix the construction.png as part of the build ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-10-01)
 
 * ember-welcome-page 8.0.0 (major)

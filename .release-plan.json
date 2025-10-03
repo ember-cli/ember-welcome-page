@@ -1,30 +1,18 @@
 {
   "solution": {
     "ember-welcome-page": {
-      "impact": "major",
-      "oldVersion": "7.0.2",
-      "newVersion": "8.0.0",
+      "impact": "patch",
+      "oldVersion": "8.0.0",
+      "newVersion": "8.0.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "major",
-          "reason": "Appears in changelog section :boom: Breaking Change"
-        },
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        },
-        {
           "impact": "patch",
-          "reason": "Appears in changelog section :memo: Documentation"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-10-01)\n\n* ember-welcome-page 8.0.0 (major)\n\n#### :boom: Breaking Change\n* `ember-welcome-page`\n  * [#408](https://github.com/ember-cli/ember-welcome-page/pull/408) convert to the new addon blueprint ([@mansona](https://github.com/mansona))\n\n#### :rocket: Enhancement\n* `ember-welcome-page`\n  * [#405](https://github.com/ember-cli/ember-welcome-page/pull/405) Make component render custom extensions for different blueprints ([@littleredridingfox](https://github.com/littleredridingfox))\n\n#### :memo: Documentation\n* `ember-welcome-page`\n  * [#406](https://github.com/ember-cli/ember-welcome-page/pull/406) Usage examples in README.md ([@johanrd](https://github.com/johanrd))\n\n#### :house: Internal\n* `ember-welcome-page`\n  * [#409](https://github.com/ember-cli/ember-welcome-page/pull/409) start using release-plan ([@mansona](https://github.com/mansona))\n  * [#410](https://github.com/ember-cli/ember-welcome-page/pull/410) upgrade to latest blueprint with new glint ([@mansona](https://github.com/mansona))\n\n#### Committers: 3\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Sergey Panov ([@littleredridingfox](https://github.com/littleredridingfox))\n- [@johanrd](https://github.com/johanrd)\n"
+  "description": "## Release (2025-10-03)\n\n* ember-welcome-page 8.0.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-welcome-page`\n  * [#412](https://github.com/ember-cli/ember-welcome-page/pull/412) Fix the construction.png as part of the build ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
