@@ -2,8 +2,8 @@
   "solution": {
     "ember-welcome-page": {
       "impact": "patch",
-      "oldVersion": "8.0.1",
-      "newVersion": "8.0.2",
+      "oldVersion": "8.0.2",
+      "newVersion": "8.0.3",
       "tagName": "latest",
       "constraints": [
         {
@@ -14,5 +14,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-10-03)\n\n* ember-welcome-page 8.0.2 (patch)\n\n#### :house: Internal\n* `ember-welcome-page`\n  * [#415](https://github.com/ember-cli/ember-welcome-page/pull/415) Add support for OIDC deployment ([@kategengler](https://github.com/kategengler))\n\n#### Committers: 1\n- Katie Gengler ([@kategengler](https://github.com/kategengler))\n"
+  "description": "## Release (2025-10-03)\n\n* ember-welcome-page 8.0.3 (patch)\n\n#### :house: Internal\n* `ember-welcome-page`\n  * [#417](https://github.com/ember-cli/ember-welcome-page/pull/417) updating node for release ([@mansona](https://github.com/mansona))\n  * [#416](https://github.com/ember-cli/ember-welcome-page/pull/416) Prepare Release v8.0.2 ([@github-actions[bot]](https://github.com/apps/github-actions))\n  * [#415](https://github.com/ember-cli/ember-welcome-page/pull/415) Add support for OIDC deployment ([@kategengler](https://github.com/kategengler))\n\n#### Committers: 3\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Katie Gengler ([@kategengler](https://github.com/kategengler))\n- [@github-actions[bot]](https://github.com/apps/github-actions)\n"
 }
