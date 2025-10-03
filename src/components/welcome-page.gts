@@ -2,7 +2,8 @@ import { getOwner } from '@ember/application';
 import { VERSION } from '@ember/version';
 import Component from '@glimmer/component';
 import './welcome-page.css';
-import construction from './construction.png';
+
+const constructionUrl = new URL('./construction.png', import.meta.url).href;
 
 function isLatestVersion(): boolean {
   const stableRegex = /^\d+\.\d+\.\d+$/;
@@ -21,7 +22,7 @@ export default class WelcomePageComponent extends Component<WelcomePageComponent
     <main id="ember-welcome-page-id-selector">
       <div class="columns">
         <div class="tomster">
-          <img src={{construction}} alt="Under construction" />
+          <img src={{constructionUrl}} alt="Under construction" />
         </div>
         <div class="welcome">
           <h1 id="title">Congratulations, you made it!</h1>
