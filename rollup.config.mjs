@@ -2,7 +2,7 @@ import { babel } from '@rollup/plugin-babel';
 import { Addon } from '@embroider/addon-dev/rollup';
 import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
-import copy from 'rollup-plugin-copy'
+import copy from 'rollup-plugin-copy';
 
 const addon = new Addon({
   srcDir: 'src',
@@ -78,8 +78,8 @@ export default {
     // this is a workaround that we should really fix upstream in addon-dev, probably with keepAssets()
     copy({
       targets: [
-        {src: 'src/components/construction.png', dest: 'dist/components'}
-      ]
-    })
+        { src: 'src/components/construction.png', dest: 'dist/components' },
+      ],
+    }),
   ],
 };

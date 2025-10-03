@@ -3,7 +3,7 @@ import { VERSION } from '@ember/version';
 import Component from '@glimmer/component';
 import './welcome-page.css';
 
-const constructionUrl = new URL('./construction.png', import.meta.url).href
+const constructionUrl = new URL('./construction.png', import.meta.url).href;
 
 function isLatestVersion(): boolean {
   const stableRegex = /^\d+\.\d+\.\d+$/;
