@@ -1,5 +1,31 @@
 # Changelog
 
+## Release (2025-10-01)
+
+* ember-welcome-page 8.0.0 (major)
+
+#### :boom: Breaking Change
+* `ember-welcome-page`
+  * [#408](https://github.com/ember-cli/ember-welcome-page/pull/408) convert to the new addon blueprint ([@mansona](https://github.com/mansona))
+
+#### :rocket: Enhancement
+* `ember-welcome-page`
+  * [#405](https://github.com/ember-cli/ember-welcome-page/pull/405) Make component render custom extensions for different blueprints ([@littleredridingfox](https://github.com/littleredridingfox))
+
+#### :memo: Documentation
+* `ember-welcome-page`
+  * [#406](https://github.com/ember-cli/ember-welcome-page/pull/406) Usage examples in README.md ([@johanrd](https://github.com/johanrd))
+
+#### :house: Internal
+* `ember-welcome-page`
+  * [#409](https://github.com/ember-cli/ember-welcome-page/pull/409) start using release-plan ([@mansona](https://github.com/mansona))
+  * [#410](https://github.com/ember-cli/ember-welcome-page/pull/410) upgrade to latest blueprint with new glint ([@mansona](https://github.com/mansona))
+
+#### Committers: 3
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Sergey Panov ([@littleredridingfox](https://github.com/littleredridingfox))
+- [@johanrd](https://github.com/johanrd)
+
 
 ## v7.0.2 (2023-05-25)
 
