@@ -2,6 +2,21 @@
 
 ## Release (2025-10-03)
 
+* ember-welcome-page 8.0.3 (patch)
+
+#### :house: Internal
+* `ember-welcome-page`
+  * [#417](https://github.com/ember-cli/ember-welcome-page/pull/417) updating node for release ([@mansona](https://github.com/mansona))
+  * [#416](https://github.com/ember-cli/ember-welcome-page/pull/416) Prepare Release v8.0.2 ([@github-actions[bot]](https://github.com/apps/github-actions))
+  * [#415](https://github.com/ember-cli/ember-welcome-page/pull/415) Add support for OIDC deployment ([@kategengler](https://github.com/kategengler))
+
+#### Committers: 3
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Katie Gengler ([@kategengler](https://github.com/kategengler))
+- [@github-actions[bot]](https://github.com/apps/github-actions)
+
+## Release (2025-10-03)
+
 * ember-welcome-page 8.0.2 (patch)
 
 #### :house: Internal
