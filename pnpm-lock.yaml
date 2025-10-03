@@ -11,6 +11,9 @@ importers:
       '@embroider/addon-shim':
         specifier: ^1.8.9
         version: 1.10.0
+      '@glimmer/component':
+        specifier: ^2.0.0
+        version: 2.0.0
       decorator-transforms:
         specifier: ^2.2.2
         version: 2.3.0(@babel/core@7.28.4)
@@ -57,9 +60,6 @@ importers:
       '@eslint/js':
         specifier: ^9.17.0
         version: 9.36.0
-      '@glimmer/component':
-        specifier: ^2.0.0
-        version: 2.0.0
       '@glint/ember-tsc':
         specifier: ^1.0.0
         version: 1.0.1(typescript@5.8.3)
