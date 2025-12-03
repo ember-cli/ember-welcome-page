@@ -5,7 +5,7 @@ import { module, test } from 'qunit';
 import semver from 'semver';
 import { setupRenderingTest } from 'ember-qunit';
 
-import WelcomePage from 'ember-welcome-page/components/welcome-page.gts';
+import { WelcomePage } from 'ember-welcome-page';
 
 function getCurrentVersion() {
   if (semver.valid(VERSION) && !semver.prerelease(VERSION)) {
