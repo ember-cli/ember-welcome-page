@@ -5,7 +5,10 @@ import { module, test } from 'qunit';
 import semver from 'semver';
 import { setupRenderingTest } from 'ember-qunit';
 
-import WelcomePage from 'ember-welcome-page/components/welcome-page';
+// need declarations to exist to import from package name
+// without them 'ember-welcome-page/components/welcome-page'
+// will not find it's types
+import WelcomePage from '#src/components/welcome-page.gts';
 
 function getCurrentVersion() {
   if (semver.valid(VERSION) && !semver.prerelease(VERSION)) {
