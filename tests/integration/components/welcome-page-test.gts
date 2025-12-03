@@ -5,8 +5,7 @@ import { module, test } from 'qunit';
 import semver from 'semver';
 import { setupRenderingTest } from 'ember-qunit';
 
-// @ts-expect-error cannot find module or types?
-import WelcomePage from 'ember-welcome-page/components/welcome-page';
+import WelcomePage from 'ember-welcome-page/components/welcome-page.gts';
 
 function getCurrentVersion() {
   if (semver.valid(VERSION) && !semver.prerelease(VERSION)) {
