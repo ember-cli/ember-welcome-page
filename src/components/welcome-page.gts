@@ -1,4 +1,4 @@
-import { getOwner } from '@ember/application';
+import { getOwner } from '@ember/owner';
 import { VERSION } from '@ember/version';
 import Component from '@glimmer/component';
 import './welcome-page.css';
