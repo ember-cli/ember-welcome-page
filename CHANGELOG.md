@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-12-09)
+
+* ember-welcome-page 8.0.4 (patch)
+
+#### :bug: Bug Fix
+* `ember-welcome-page`
+  * [#419](https://github.com/ember-cli/ember-welcome-page/pull/419) Make usable ([@evoactivity](https://github.com/evoactivity))
+
+#### Committers: 1
+- Liam Potter ([@evoactivity](https://github.com/evoactivity))
+
 ## Release (2025-10-03)
 
 * ember-welcome-page 8.0.3 (patch)
