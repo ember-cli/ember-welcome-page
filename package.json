@@ -19,6 +19,7 @@
       "types": "./declarations/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./public/*": "./public/*",
     "./*.css": "./dist/*.css",
     "./*": {
       "types": "./declarations/*.d.ts",
@@ -36,7 +37,8 @@
   "files": [
     "addon-main.cjs",
     "declarations",
-    "dist"
+    "dist",
+    "public"
   ],
   "scripts": {
     "build": "rollup --config",
@@ -115,6 +117,9 @@
     "main": "addon-main.cjs",
     "app-js": {
       "./components/welcome-page.js": "./dist/_app_/components/welcome-page.js"
+    },
+    "public-assets": {
+      "./public/construction.png": "/ember-welcome-page/construction.png"
     }
   }
 }

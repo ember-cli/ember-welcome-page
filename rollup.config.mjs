@@ -2,7 +2,6 @@ import { babel } from '@rollup/plugin-babel';
 import { Addon } from '@embroider/addon-dev/rollup';
 import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
-import copy from 'rollup-plugin-copy';
 
 const addon = new Addon({
   srcDir: 'src',
@@ -71,15 +70,9 @@ export default {
     // to leave alone and keep in the published output.
     addon.keepAssets(['**/*.css']),
 
-    // we can't use this because it doesn't work with copy()
-    // // Remove leftover build artifacts when starting a new build.
-    // addon.clean(),
+    addon.publicAssets('public'),
 
-    // this is a workaround that we should really fix upstream in addon-dev, probably with keepAssets()
-    copy({
-      targets: [
-        { src: 'src/components/construction.png', dest: 'dist/components' },
-      ],
-    }),
+    // Remove leftover build artifacts when starting a new build.
+    addon.clean(),
   ],
 };
