@@ -2,8 +2,8 @@
   "solution": {
     "ember-welcome-page": {
       "impact": "patch",
-      "oldVersion": "8.0.3",
-      "newVersion": "8.0.4",
+      "oldVersion": "8.0.4",
+      "newVersion": "8.0.5",
       "tagName": "latest",
       "constraints": [
         {
@@ -14,5 +14,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-12-09)\n\n* ember-welcome-page 8.0.4 (patch)\n\n#### :bug: Bug Fix\n* `ember-welcome-page`\n  * [#419](https://github.com/ember-cli/ember-welcome-page/pull/419) Make usable ([@evoactivity](https://github.com/evoactivity))\n\n#### Committers: 1\n- Liam Potter ([@evoactivity](https://github.com/evoactivity))\n"
+  "description": "## Release (2026-01-10)\n\n* ember-welcome-page 8.0.5 (patch)\n\n#### :bug: Bug Fix\n* `ember-welcome-page`\n  * [#421](https://github.com/ember-cli/ember-welcome-page/pull/421) fix construction.png reference ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
