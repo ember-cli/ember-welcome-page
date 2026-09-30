@@ -1,9 +1,15 @@
 import { getOwner } from '@ember/application';
+import { registerDestructor } from '@ember/destroyable';
+import type Owner from '@ember/owner';
 import { VERSION } from '@ember/version';
 import Component from '@glimmer/component';
 import './welcome-page.css';
 
 const constructionUrl = '/ember-welcome-page/construction.png';
+
+// Every rule in welcome-page.css is scoped under this class.
+// The CSS loads on every page of the app, even where this component does not render.
+const bodyClass = 'ember-welcome-page';
 
 function isLatestVersion(): boolean {
   const stableRegex = /^\d+\.\d+\.\d+$/;
@@ -71,6 +77,21 @@ export default class WelcomePageComponent extends Component<WelcomePageComponent
       </p>
     </main>
   </template>
+
+  constructor(owner: Owner, args: WelcomePageComponentSignature['Args']) {
+    super(owner, args);
+
+    // FastBoot has no global document.
+    if (typeof document === 'undefined') {
+      return;
+    }
+
+    document.body.classList.add(bodyClass);
+
+    registerDestructor(this, () => {
+      document.body.classList.remove(bodyClass);
+    });
+  }
 
   get rootURL(): string {
     const config = getOwner(this)?.factoryFor('config:environment');
