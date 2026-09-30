@@ -1,4 +1,4 @@
-body {
+body.ember-welcome-page {
   color: rgb(28, 30, 36);
   background: rgb(244, 246, 248);
   font-family:
@@ -18,50 +18,50 @@ body {
   margin: 0 auto;
   padding: 0;
 }
-#ember-welcome-page-id-selector {
+.ember-welcome-page #ember-welcome-page-id-selector {
   height: 100vh;
   padding: 2em;
 }
-#ember-welcome-page-id-selector img {
+.ember-welcome-page #ember-welcome-page-id-selector img {
   max-width: 100%;
 }
-#ember-welcome-page-id-selector p {
+.ember-welcome-page #ember-welcome-page-id-selector p {
   font-size: 1.25em;
   margin: 0 0 0.75em;
 }
-#ember-welcome-page-id-selector h1 {
+.ember-welcome-page #ember-welcome-page-id-selector h1 {
   font-size: 2.5em;
   font-weight: 200;
   line-height: 1.2;
   margin-top: 0;
 }
-#ember-welcome-page-id-selector a:link,
-#ember-welcome-page-id-selector a:visited {
+.ember-welcome-page #ember-welcome-page-id-selector a:link,
+.ember-welcome-page #ember-welcome-page-id-selector a:visited {
   color: rgb(255, 92, 68);
 }
-#ember-welcome-page-id-selector a:hover,
-#ember-welcome-page-id-selector a:active {
+.ember-welcome-page #ember-welcome-page-id-selector a:hover,
+.ember-welcome-page #ember-welcome-page-id-selector a:active {
   color: rgb(255, 92, 68);
 }
-#ember-welcome-page-id-selector .tomster {
+.ember-welcome-page #ember-welcome-page-id-selector .tomster {
   flex: 2;
 }
-#ember-welcome-page-id-selector .welcome {
+.ember-welcome-page #ember-welcome-page-id-selector .welcome {
   flex: 3;
 }
-#ember-welcome-page-id-selector .columns {
+.ember-welcome-page #ember-welcome-page-id-selector .columns {
   display: flex;
   margin: 0 auto;
   max-width: 960px;
 }
-#ember-welcome-page-id-selector .welcome > ul > li {
+.ember-welcome-page #ember-welcome-page-id-selector .welcome > ul > li {
   padding-bottom: 0.5em;
   font-size: 1.1em;
 }
-#ember-welcome-page-id-selector .welcome > ul > li > a {
+.ember-welcome-page #ember-welcome-page-id-selector .welcome > ul > li > a {
   font-weight: bold;
 }
-#ember-welcome-page-id-selector .postscript {
+.ember-welcome-page #ember-welcome-page-id-selector .postscript {
   color: rgb(28, 30, 36);
   background: rgb(244, 246, 248);
   font-style: italic;
@@ -71,7 +71,7 @@ body {
   padding-top: 3em;
   text-align: center;
 }
-#ember-welcome-page-id-selector .postscript code {
+.ember-welcome-page #ember-welcome-page-id-selector .postscript code {
   color: rgb(244, 246, 248);
   border-radius: 3px;
   background-color: rgb(28, 30, 36);
@@ -82,27 +82,27 @@ body {
   padding: 0 0.5em;
 }
 @media (max-width: 700px) {
-  #ember-welcome-page-id-selector {
+  .ember-welcome-page #ember-welcome-page-id-selector {
     padding: 1em;
   }
-  #ember-welcome-page-id-selector .columns {
+  .ember-welcome-page #ember-welcome-page-id-selector .columns {
     flex-direction: column;
   }
-  #ember-welcome-page-id-selector .tomster img {
+  .ember-welcome-page #ember-welcome-page-id-selector .tomster img {
     display: block;
     margin: auto;
     width: 50%;
   }
-  #ember-welcome-page-id-selector h2 {
+  .ember-welcome-page #ember-welcome-page-id-selector h2 {
     text-align: center;
   }
 }
 @media (max-width: 400px) {
-  #ember-welcome-page-id-selector .tomster img {
+  .ember-welcome-page #ember-welcome-page-id-selector .tomster img {
     width: 60%;
   }
-  #ember-welcome-page-id-selector .welcome,
-  #ember-welcome-page-id-selector .tomster {
+  .ember-welcome-page #ember-welcome-page-id-selector .welcome,
+  .ember-welcome-page #ember-welcome-page-id-selector .tomster {
     float: none;
     margin: auto;
     width: 100%;

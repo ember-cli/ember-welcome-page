@@ -1,4 +1,4 @@
-import { findAll, render } from '@ember/test-helpers';
+import { clearRender, findAll, render } from '@ember/test-helpers';
 import { VERSION } from '@ember/version';
 import { a11yAudit } from 'ember-a11y-testing/addon-test-support';
 import { module, test } from 'qunit';
@@ -97,6 +97,30 @@ module('Integration | Component | welcome-page', function (hooks) {
       .hasText(
         'app/templates/application.gts',
         'The application template path has the correct extension',
+      );
+  });
+
+  test('it adds a class to the body while it is rendered', async function (assert) {
+    assert
+      .dom(document.body)
+      .doesNotHaveClass(
+        'ember-welcome-page',
+        'The body has no class before render.',
+      );
+
+    await render(<template><WelcomePage /></template>);
+
+    assert
+      .dom(document.body)
+      .hasClass('ember-welcome-page', 'The body has the class after render.');
+
+    await clearRender();
+
+    assert
+      .dom(document.body)
+      .doesNotHaveClass(
+        'ember-welcome-page',
+        'The body has no class after teardown.',
       );
   });
 
