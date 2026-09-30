@@ -2,17 +2,21 @@
   "solution": {
     "ember-welcome-page": {
       "impact": "patch",
-      "oldVersion": "8.0.4",
-      "newVersion": "8.0.5",
+      "oldVersion": "8.0.5",
+      "newVersion": "8.0.6",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-01-10)\n\n* ember-welcome-page 8.0.5 (patch)\n\n#### :bug: Bug Fix\n* `ember-welcome-page`\n  * [#421](https://github.com/ember-cli/ember-welcome-page/pull/421) fix construction.png reference ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2026-09-30)\n\n* ember-welcome-page 8.0.6 (patch)\n\n#### :bug: Bug Fix\n* `ember-welcome-page`\n  * [#423](https://github.com/ember-cli/ember-welcome-page/pull/423) Scope the welcome page CSS under a body class ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))\n\n#### :house: Internal\n* `ember-welcome-page`\n  * [#425](https://github.com/ember-cli/ember-welcome-page/pull/425) pnpm dlx create-release-plan-setup@latest --update ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#426](https://github.com/ember-cli/ember-welcome-page/pull/426) Fix the Ember 7 try scenarios ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))\n\n#### Committers: 2\n- @NullVoxPopuli's reduced-access machine account for AI usage ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }

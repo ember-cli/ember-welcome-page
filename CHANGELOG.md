@@ -1,5 +1,22 @@
 # Changelog
 
+## Release (2026-09-30)
+
+* ember-welcome-page 8.0.6 (patch)
+
+#### :bug: Bug Fix
+* `ember-welcome-page`
+  * [#423](https://github.com/ember-cli/ember-welcome-page/pull/423) Scope the welcome page CSS under a body class ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))
+
+#### :house: Internal
+* `ember-welcome-page`
+  * [#425](https://github.com/ember-cli/ember-welcome-page/pull/425) pnpm dlx create-release-plan-setup@latest --update ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#426](https://github.com/ember-cli/ember-welcome-page/pull/426) Fix the Ember 7 try scenarios ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))
+
+#### Committers: 2
+- @NullVoxPopuli's reduced-access machine account for AI usage ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2026-01-10)
 
 * ember-welcome-page 8.0.5 (patch)
